@@ -1,118 +1,110 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>救舅Uncle全商品</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>救舅Uncle</title>
 
 <style>
+:root {
+  --bg: #111;
+  --card: #1c1c1c;
+  --gold: #c9a24d;
+  --text: #f5f5f5;
+  --muted: #aaa;
+}
+
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-  background: #f4f2ee;
-  color: #2b2b2b;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Serif TC", serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
 header {
-  padding: 24px 16px;
   text-align: center;
-  font-size: 30px;
-  font-weight: 600;
+  padding: 24px 16px;
+  font-size: 32px;
   letter-spacing: 2px;
+  color: var(--gold);
 }
 
 .menu {
-  max-width: 520px;
-  margin: auto;
-  padding: 0 16px 40px;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
 }
 
 .item {
-  display: flex;
-  gap: 14px;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 14px;
-  margin-bottom: 16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
 }
 
 .item img {
-  width: 96px;
-  height: 96px;
-  border-radius: 14px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: linear-gradient(135deg,#ddd,#eee);
-  flex-shrink: 0;
-  cursor: pointer;
+  background: #333;
+  cursor: zoom-in;
 }
 
 .info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 16px;
 }
 
 .name {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
 .meta {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.price {
-  font-size: 18px;
-  font-weight: 600;
-  color: #8b5e3c;
-}
-
-.qty {
+  color: var(--muted);
   font-size: 14px;
-  color: #666;
 }
 
-/* ===== Lightbox ===== */
+/* === Lightbox === */
+
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,.95);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 999;
+  touch-action: none;
 }
 
-.lightbox.show {
+.lightbox.active {
   display: flex;
 }
 
 .lightbox img {
-  max-width: none;
-  max-height: none;
-  width: 90%;
-  touch-action: none;
+  max-width: 100%;
+  max-height: 100%;
   transform-origin: center center;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  will-change: transform;
 }
 </style>
 </head>
 
 <body>
-<header>救舅Uncle全商品</header>
-<div class="menu" id="menu"></div>
+
+<header>救舅Uncle</header>
+<main class="menu" id="menu"></main>
 
 <div class="lightbox" id="lightbox">
-  <img id="lightboxImg" src="" alt="">
+  <img id="zoomImg" />
 </div>
 
 <script>
-/* ========= 商品資料（只改這裡） ========= */
+/* ===== 商品 JSON（你之後只要改這裡） ===== */
 const products = [
   { "name": "提袋(紫)", "price": 50, "qty": 1, "bottom": 30 },
   { "name": "提袋(綠)", "price": 50, "qty": 1, "bottom": 30 },
@@ -198,96 +190,93 @@ const products = [
   { "name": "DVD", "price": 150, "qty": 10, "bottom": 0 },
   { "name": "紫水晶石", "price": 20, "qty": 1, "bottom": 10 }
 ];
-/* ========= 產生商品 ========= */
+
+/* ===== 產生商品 ===== */
 const menu = document.getElementById("menu");
+
 products.forEach(p => {
-  const item = document.createElement("div");
-  item.className = "item";
+  const card = document.createElement("div");
+  card.className = "item";
 
   const img = document.createElement("img");
-  img.src = `./image/${p.name}.jpg`;
-  img.alt = p.name;
-  img.addEventListener("click", () => openLightbox(img.src));
+  img.src = `./image/${p.品項}.png`;
+  img.onerror = () => img.style.background = "#444";
+  img.onclick = () => openLightbox(img.src);
 
-  const info = document.createElement("div");
-  info.className = "info";
-  info.innerHTML = `
-    <div class="name">${p.name}</div>
-    <div class="meta">
-      <div class="price">NT$ ${p.price}</div>
-      <div class="qty">剩餘 ${p.qty}</div>
+  card.innerHTML = `
+    <div class="info">
+      <div class="name">${p.品項}</div>
+      <div class="meta">
+        <span>NT$ ${p.售價}</span>
+        <span>剩餘 ${p.數量}</span>
+      </div>
     </div>
   `;
-
-  item.appendChild(img);
-  item.appendChild(info);
-  menu.appendChild(item);
+  card.prepend(img);
+  menu.appendChild(card);
 });
 
-/* ========= Lightbox + 手勢 ========= */
+/* ===== 圖片縮放邏輯（已修正跑位） ===== */
 const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
+const zoomImg = document.getElementById("zoomImg");
 
-let scale = 1, startScale = 1;
-let posX = 0, posY = 0;
-let startX = 0, startY = 0;
-let lastTouchDistance = 0;
-
-function updateTransform() {
-  lightboxImg.style.transform =
-    `translate(${posX}px, ${posY}px) scale(${scale})`;
-}
-
-function getDistance(t1, t2) {
-  return Math.hypot(
-    t2.clientX - t1.clientX,
-    t2.clientY - t1.clientY
-  );
-}
+let scale = 1;
+let lastScale = 1;
+let translateX = 0;
+let translateY = 0;
+let startX = 0;
+let startY = 0;
+let startDist = 0;
 
 function openLightbox(src) {
-  lightboxImg.src = src;
-  scale = 1;
-  posX = 0;
-  posY = 0;
-  updateTransform();
-  lightbox.classList.add("show");
+  scale = lastScale = 1;
+  translateX = translateY = 0;
+  zoomImg.style.transform = "translate(0,0) scale(1)";
+  zoomImg.src = src;
+  lightbox.classList.add("active");
 }
 
-lightboxImg.addEventListener("touchstart", e => {
-  if (e.touches.length === 1) {
-    startX = e.touches[0].clientX - posX;
-    startY = e.touches[0].clientY - posY;
-  }
-  if (e.touches.length === 2) {
-    lastTouchDistance = getDistance(e.touches[0], e.touches[1]);
-    startScale = scale;
-  }
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) lightbox.classList.remove("active");
 });
 
-lightboxImg.addEventListener("touchmove", e => {
+zoomImg.addEventListener("touchstart", e => {
   e.preventDefault();
 
   if (e.touches.length === 1) {
-    posX = e.touches[0].clientX - startX;
-    posY = e.touches[0].clientY - startY;
-    updateTransform();
+    startX = e.touches[0].clientX - translateX;
+    startY = e.touches[0].clientY - translateY;
   }
 
   if (e.touches.length === 2) {
-    const newDistance = getDistance(e.touches[0], e.touches[1]);
-    scale = Math.min(Math.max(startScale * (newDistance / lastTouchDistance), 1), 4);
-    updateTransform();
+    startDist = getDistance(e.touches);
+    lastScale = scale;
   }
-}, { passive: false });
-
-lightbox.addEventListener("click", () => {
-  lightbox.classList.remove("show");
-  lightboxImg.src = "";
-  scale = 1;
-  posX = 0;
-  posY = 0;
 });
+
+zoomImg.addEventListener("touchmove", e => {
+  e.preventDefault();
+
+  if (e.touches.length === 1) {
+    translateX = e.touches[0].clientX - startX;
+    translateY = e.touches[0].clientY - startY;
+  }
+
+  if (e.touches.length === 2) {
+    const dist = getDistance(e.touches);
+    scale = Math.min(Math.max(lastScale * (dist / startDist), 1), 4);
+  }
+
+  zoomImg.style.transform =
+    `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+});
+
+function getDistance(touches) {
+  const dx = touches[0].clientX - touches[1].clientX;
+  const dy = touches[0].clientY - touches[1].clientY;
+  return Math.hypot(dx, dy);
+}
 </script>
+
 </body>
 </html>
