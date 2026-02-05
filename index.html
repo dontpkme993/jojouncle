@@ -131,6 +131,15 @@ header {
 </div>
 
 <script>
+/* ========= 自動加上 openExternalBrowser 參數 ========= */
+(function() {
+  const url = new URL(window.location.href);
+  if (!url.searchParams.has('openExternalBrowser')) {
+    url.searchParams.set('openExternalBrowser', '1');
+    window.location.replace(url.toString());
+  }
+})();
+
 /* ========= 產生商品 ========= */
 const menu = document.getElementById("menu");
 

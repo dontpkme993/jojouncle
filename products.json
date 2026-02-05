@@ -1,62 +1,27 @@
 [{
-	"name": "提袋(紫)",
-	"price": 50,
+	"name": "尼泊爾民族風長袖上衣(藍)",
+	"price": 300,
 	"qty": 1,
-	"bottom": 30
+	"bottom": 150
 }, {
-	"name": "提袋(綠)",
-	"price": 50,
+	"name": "尼泊爾民族風長袖上衣(綠)",
+	"price": 300,
 	"qty": 1,
-	"bottom": 30
+	"bottom": 150
 }, {
-	"name": "Lush 提袋",
-	"price": 80,
+	"name": "尼泊爾民族風長袖連身裙(米)",
+	"price": 300,
 	"qty": 1,
-	"bottom": 50
-}, {
-	"name": "Origins 2013 提袋",
-	"price": 80,
-	"qty": 1,
-	"bottom": 50
-}, {
-	"name": "黑騎士物語 提袋",
-	"price": 50,
-	"qty": 2,
-	"bottom": 30
-}, {
-	"name": "人參 提袋",
-	"price": 80,
-	"qty": 1,
-	"bottom": 50
-}, {
-	"name": "有書之年 提袋",
-	"price": 120,
-	"qty": 1,
-	"bottom": 100
-}, {
-	"name": "貓 提袋",
-	"price": 100,
-	"qty": 1,
-	"bottom": 80
-}, {
-	"name": "Taiwan Industrail Heritage 提袋",
-	"price": 120,
-	"qty": 1,
-	"bottom": 100
-}, {
-	"name": "中研院 提袋",
-	"price": 100,
-	"qty": 1,
-	"bottom": 80
+	"bottom": 150
 }, {
 	"name": "藤編包",
 	"price": 550,
 	"qty": 1,
 	"bottom": 500
 }, {
-	"name": "mizuno襪子3雙",
+	"name": "mizuno運動襪3雙",
 	"price": 450,
-	"qty": 2,
+	"qty": "2組",
 	"bottom": 400
 }, {
 	"name": "bodum保溫壺",
@@ -68,26 +33,6 @@
 	"price": 350,
 	"qty": 1,
 	"bottom": 300
-}, {
-	"name": "英國地圖",
-	"price": 300,
-	"qty": 1,
-	"bottom": 250
-}, {
-	"name": "蔣勳孤獨六講有聲書",
-	"price": 400,
-	"qty": 1,
-	"bottom": 300
-}, {
-	"name": "蔣勳王羲之",
-	"price": 200,
-	"qty": 1,
-	"bottom": 150
-}, {
-	"name": "水滸108",
-	"price": 200,
-	"qty": 1,
-	"bottom": 150
 }, {
 	"name": "水晶盤",
 	"price": 300,
@@ -191,7 +136,7 @@
 }, {
 	"name": "6入碗筷組",
 	"price": 450,
-	"qty": 1,
+	"qty": "1組",
 	"bottom": 400
 }, {
 	"name": "美甲",
@@ -211,7 +156,7 @@
 }, {
 	"name": "a la sha 筆記本",
 	"price": 120,
-	"qty": 0,
+	"qty": 1,
 	"bottom": 100
 }, {
 	"name": "氣墊梳",
@@ -433,4 +378,74 @@
 	"price": 20,
 	"qty": 1,
 	"bottom": 10
+}, {
+	"name": "提袋(紫)",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30
+}, {
+	"name": "提袋(綠)",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30
+}, {
+	"name": "Lush 提袋",
+	"price": 80,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "Origins 2013 提袋",
+	"price": 80,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "黑騎士物語 提袋",
+	"price": 50,
+	"qty": 2,
+	"bottom": 30
+}, {
+	"name": "人參 提袋",
+	"price": 80,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "有書之年 提袋",
+	"price": 120,
+	"qty": 1,
+	"bottom": 100
+}, {
+	"name": "貓 提袋",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "Taiwan Industrail Heritage 提袋",
+	"price": 120,
+	"qty": 1,
+	"bottom": 100
+}, {
+	"name": "中研院 提袋",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "英國地圖",
+	"price": 300,
+	"qty": 1,
+	"bottom": 250
+}, {
+	"name": "蔣勳孤獨六講有聲書",
+	"price": 400,
+	"qty": 1,
+	"bottom": 300
+}, {
+	"name": "蔣勳王羲之",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "水滸108",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
 }]
