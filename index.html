@@ -141,8 +141,8 @@ h3 {
 </div>
 
 <h2>請支援Uncle收銀</h2>
-<h3>匯款帳號：111 0000111122223333</h3>
-<button>複製匯款帳號</button>
+<h3>匯款帳號：<span id="account">111 0000111122223333</span></h3>
+<button id="copy-btn">複製匯款帳號</button>
 <script>
 /* ========= 自動加上 openExternalBrowser 參數 ========= */
 (function() {
@@ -255,6 +255,19 @@ lightbox.addEventListener("click", () => {
   scale = 1;
   posX = 0;
   posY = 0;
+});
+
+/* ========= 複製帳號功能 ========= */
+document.getElementById("copy-btn").addEventListener("click", () => {
+  const accountText = document.getElementById("account").textContent;
+  navigator.clipboard.writeText(accountText).then(() => {
+    const btn = document.getElementById("copy-btn");
+    const originalText = btn.textContent;
+    btn.textContent = "複製成功！";
+    setTimeout(() => {
+      btn.textContent = originalText;
+    }, 2000);
+  });
 });
 </script>
 </body>
