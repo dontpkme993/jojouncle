@@ -281,6 +281,14 @@ lightboxImg.addEventListener("touchmove", e => {
   }
 }, { passive: false });
 
+lightboxImg.addEventListener("touchend", e => {
+  if (e.touches.length === 1) {
+    // 從雙指變單指時，重新計算起始位置以避免圖片跳動
+    startX = e.touches[0].clientX - posX;
+    startY = e.touches[0].clientY - posY;
+  }
+});
+
 lightbox.addEventListener("click", () => {
   lightbox.classList.remove("show");
   lightboxImg.src = "";
