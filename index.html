@@ -14,11 +14,33 @@ body {
 }
 
 header {
-  padding: 24px 16px;
+  padding: 36px 16px 20px;
   text-align: center;
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  background: linear-gradient(135deg, #8b5e3c 0%, #c49a6c 50%, #8b5e3c 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #c49a6c, transparent);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
 }
 
 .menu {
@@ -122,10 +144,39 @@ header {
 
 h2 {
   text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #5a3d28;
+  margin: 32px 16px 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+h2::before,
+h2::after {
+  content: "";
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c49a6c);
+}
+
+h2::after {
+  background: linear-gradient(90deg, #c49a6c, transparent);
 }
 
 h3 {
   text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #9a8777;
+  margin: 4px 16px 12px;
+  position: relative;
 }
 
 #copy-btn {
