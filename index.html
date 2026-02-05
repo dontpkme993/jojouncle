@@ -27,17 +27,6 @@ header {
   padding: 0 16px 40px;
 }
 
-.item {
-  display: flex;
-  gap: 14px;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 14px;
-  margin-bottom: 16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-  position: relative;
-}
-
 .item.sold-out::before {
   content: "售完";
   position: absolute;
@@ -54,6 +43,18 @@ header {
   z-index: 1;
 }
 
+.item {
+  display: flex;
+  gap: 14px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  position: relative;
+  cursor: pointer;
+}
+
 .item img {
   width: 96px;
   height: 96px;
@@ -61,7 +62,6 @@ header {
   object-fit: cover;
   background: linear-gradient(135deg,#ddd,#eee);
   flex-shrink: 0;
-  cursor: pointer;
 }
 
 .info {
@@ -144,7 +144,7 @@ fetch('./products.json')
       const img = document.createElement("img");
       img.src = `./image/${p.name}.jpg`;
       img.alt = p.name;
-      img.addEventListener("click", () => openLightbox(img.src));
+      item.addEventListener("click", () => openLightbox(img.src));
 
       const info = document.createElement("div");
       info.className = "info";
