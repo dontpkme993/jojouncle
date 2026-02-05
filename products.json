@@ -299,6 +299,11 @@
 	"qty": 1,
 	"bottom": 120
 }, {
+	"name": "小小兵玩具",
+	"price": 80,
+	"qty": 1,
+	"bottom": 10
+}, {
 	"name": "知足常樂",
 	"price": 500,
 	"qty": 1,
@@ -448,11 +453,6 @@
 	"price": 200,
 	"qty": 1,
 	"bottom": 150
-}, {
-	"name": "小小兵玩具",
-	"price": 80,
-	"qty": 1,
-	"bottom": 10
 }, {
 	"name": "sodastream拉鍊保特瓶套",
 	"price": 50,
