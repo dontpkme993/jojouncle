@@ -211,12 +211,12 @@
 }, {
 	"name": "a la sha 筆記本",
 	"price": 120,
-	"qty": 1,
+	"qty": 0,
 	"bottom": 100
 }, {
 	"name": "氣墊梳",
 	"price": 120,
-	"qty": 0,
+	"qty": 1,
 	"bottom": 100
 }, {
 	"name": "櫻桃小丸子明信片8張",
