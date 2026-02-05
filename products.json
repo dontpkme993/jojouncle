@@ -1,89 +1,436 @@
-[
-  { "name": "提袋(紫)", "price": 50, "qty": 1, "bottom": 30 },
-  { "name": "提袋(綠)", "price": 50, "qty": 1, "bottom": 30 },
-  { "name": "Lush 提袋", "price": 80, "qty": 1, "bottom": 50 },
-  { "name": "Origins 2013 提袋", "price": 80, "qty": 1, "bottom": 50 },
-  { "name": "黑騎士物語 提袋", "price": 50, "qty": 2, "bottom": 30 },
-  { "name": "人參 提袋", "price": 80, "qty": 1, "bottom": 50 },
-  { "name": "有書之年 提袋", "price": 120, "qty": 1, "bottom": 100 },
-  { "name": "貓 提袋", "price": 100, "qty": 1, "bottom": 80 },
-  { "name": "Taiwan Industrail Heritage 提袋", "price": 120, "qty": 1, "bottom": 100 },
-  { "name": "中研院 提袋", "price": 100, "qty": 1, "bottom": 80 },
-  { "name": "藤編包", "price": 550, "qty": 1, "bottom": 500 },
-  { "name": "mizuno襪子3雙", "price": 450, "qty": 2, "bottom": 400 },
-  { "name": "bodum保溫壺", "price": 350, "qty": 1, "bottom": 200 },
-  { "name": "內衣", "price": 350, "qty": 1, "bottom": 300 },
-  { "name": "英國地圖", "price": 300, "qty": 1, "bottom": 250 },
-  { "name": "蔣勳孤獨六講有聲書", "price": 400, "qty": 1, "bottom": 300 },
-  { "name": "蔣勳王羲之", "price": 200, "qty": 1, "bottom": 150 },
-  { "name": "水滸108", "price": 200, "qty": 1, "bottom": 150 },
-  { "name": "水晶盤", "price": 300, "qty": 2, "bottom": 200 },
-  { "name": "Poker", "price": 150, "qty": 1, "bottom": 100 },
-  { "name": "KLIM碗", "price": 120, "qty": 1, "bottom": 100 },
-  { "name": "金園CK5件碗 葡萄圖案", "price": 120, "qty": "1組", "bottom": 100 },
-  { "name": "sakura黃碗", "price": 30, "qty": 1, "bottom": 30 },
-  { "name": "福壽無疆碗", "price": 180, "qty": 2, "bottom": 150 },
-  { "name": "sakura碗盤組", "price": 80, "qty": "1組", "bottom": 50 },
-  { "name": "牛奶玻璃匙", "price": 20, "qty": 10, "bottom": 20 },
-  { "name": "CK匙", "price": 30, "qty": 1, "bottom": 30 },
-  { "name": "green mug", "price": 50, "qty": 2, "bottom": 50 },
-  { "name": "康乃馨橢圓盤", "price": 100, "qty": 1, "bottom": 80 },
-  { "name": "海芋盤", "price": 100, "qty": 1, "bottom": 80 },
-  { "name": "金魚盤", "price": 100, "qty": 1, "bottom": 50 },
-  { "name": "牛奶玻璃碟", "price": 30, "qty": 2, "bottom": 20 },
-  { "name": "只見線明信片", "price": 50, "qty": "1組", "bottom": 50 },
-  { "name": "鮮乳坊提袋", "price": 50, "qty": 1, "bottom": 30 },
-  { "name": "starbucks飲料袋", "price": 50, "qty": 1, "bottom": 50 },
-  { "name": "yoga鋪巾", "price": 400, "qty": 1, "bottom": 350 },
-  { "name": "SKII 小熊", "price": 50, "qty": 1, "bottom": 50 },
-  { "name": "MOZ玻璃杯組", "price": 200, "qty": 1, "bottom": 150 },
-  { "name": "6入碗筷組", "price": 450, "qty": 1, "bottom": 400 },
-  { "name": "美甲", "price": 500, "qty": 1, "bottom": 450 },
-  { "name": "super robot筆記本 魔神Z", "price": 950, "qty": 1, "bottom": 850 },
-  { "name": "starbucks布章", "price": 120, "qty": 1, "bottom": 100 },
-  { "name": "a la sha 筆記本", "price": 120, "qty": 1, "bottom": 100 },
-  { "name": "氣墊梳", "price": 120, "qty": 1, "bottom": 100 },
-  { "name": "櫻桃小丸子明信片8張", "price": 150, "qty": "1組", "bottom": 150 },
-  { "name": "達利明信片", "price": 10, "qty": 3, "bottom": 10 },
-  { "name": "手機指扣", "price": 30, "qty": 2, "bottom": 30 },
-  { "name": "SKII 包", "price": 150, "qty": 1, "bottom": 150 },
-  { "name": "蜘蛛人金屬手機指扣", "price": 50, "qty": 1, "bottom": 50 },
-  { "name": "書展徽章筆記本", "price": 50, "qty": 1, "bottom": 50 },
-  { "name": "seventeen拼圖", "price": 350, "qty": 1, "bottom": 290 },
-  { "name": "林青霞鏡子", "price": 200, "qty": 1, "bottom": 150 },
-  { "name": "談徐志摩", "price": 350, "qty": 1, "bottom": 300 },
-  { "name": "康寧紫花盤", "price": 50, "qty": 1, "bottom": 50 },
-  { "name": "康寧深盤藍花", "price": 200, "qty": 2, "bottom": 150 },
-  { "name": "康寧碗", "price": 50, "qty": 1, "bottom": 50 },
-  { "name": "大同白碗公", "price": 30, "qty": 2, "bottom": 30 },
-  { "name": "大同玫瑰碗公", "price": 50, "qty": 2, "bottom": 50 },
-  { "name": "大同中碗公", "price": 100, "qty": 1, "bottom": 80 },
-  { "name": "大同大碗公", "price": 200, "qty": 1, "bottom": 150 },
-  { "name": "紅紫花碗4件", "price": 100, "qty": "1組", "bottom": 80 },
-  { "name": "紫圈碗4件", "price": 100, "qty": "1組", "bottom": 80 },
-  { "name": "大千百貨杯", "price": 500, "qty": 1, "bottom": 500 },
-  { "name": "康寧Iris shadow 1.5公升 方鍋", "price": 700, "qty": 1, "bottom": 650 },
-  { "name": "康寧Iris shadow 3公升 方鍋", "price": 1000, "qty": 1, "bottom": 900 },
-  { "name": "波堤獅碗", "price": 20, "qty": 1, "bottom": 20 },
-  { "name": "蛋黃哥盤", "price": 30, "qty": 1, "bottom": 30 },
-  { "name": "電話卡", "price": 100, "qty": 6, "bottom": 100 },
-  { "name": "魔法公主3D拼圖", "price": 200, "qty": 1, "bottom": 0 },
-  { "name": "江蕙2025演唱會手燈", "price": 200, "qty": 1, "bottom": 150 },
-  { "name": "可伸縮多功能水槽瀝水架 附抹布掛桿濾水架", "price": 150, "qty": 1, "bottom": 120 },
-  { "name": "知足常樂", "price": 500, "qty": 1, "bottom": 450 },
-  { "name": "歐萊德香水", "price": 1100, "qty": 1, "bottom": 1100 },
-  { "name": "熊本熊玻璃瓶(梅酒)", "price": 120, "qty": 1, "bottom": 80 },
-  { "name": "熊本熊玻璃瓶(清酒)", "price": 100, "qty": 3, "bottom": 80 },
-  { "name": "阿蘇火山牛奶瓶", "price": 100, "qty": 1, "bottom": 80 },
-  { "name": "阿部牧場牛奶瓶", "price": 100, "qty": 1, "bottom": 80 },
-  { "name": "軒尼詩碗", "price": 150, "qty": 1, "bottom": 150 },
-  { "name": "Soill攀岩鞋UK6號", "price": 1200, "qty": 1, "bottom": 1200 },
-  { "name": "Soill攀岩鞋UK8號", "price": 1200, "qty": 1, "bottom": 1200 },
-  { "name": "台風咖啡杯", "price": 150, "qty": 1, "bottom": 150 },
-  { "name": "shot杯5件組", "price": 100, "qty": "1組", "bottom": 100 },
-  { "name": "DVD", "price": 150, "qty": 10, "bottom": 0 },
-  { "name": "紫水晶石", "price": 20, "qty": 1, "bottom": 10 },
-  { "name": "WD不鏽鋼保溫杯", "price": 450, "qty": 1, "bottom": 400 },
-  { "name": "S6手足修磨儀", "price": 200, "qty": 1, "bottom": 150 },
-  { "name": "金繼IKEA盤", "price": 20, "qty": 1, "bottom": 10 }
-]
+[{
+	"name": "提袋(紫)",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30
+}, {
+	"name": "提袋(綠)",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30
+}, {
+	"name": "Lush 提袋",
+	"price": 80,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "Origins 2013 提袋",
+	"price": 80,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "黑騎士物語 提袋",
+	"price": 50,
+	"qty": 2,
+	"bottom": 30
+}, {
+	"name": "人參 提袋",
+	"price": 80,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "有書之年 提袋",
+	"price": 120,
+	"qty": 1,
+	"bottom": 100
+}, {
+	"name": "貓 提袋",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "Taiwan Industrail Heritage 提袋",
+	"price": 120,
+	"qty": 1,
+	"bottom": 100
+}, {
+	"name": "中研院 提袋",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "藤編包",
+	"price": 550,
+	"qty": 1,
+	"bottom": 500
+}, {
+	"name": "mizuno襪子3雙",
+	"price": 450,
+	"qty": 2,
+	"bottom": 400
+}, {
+	"name": "bodum保溫壺",
+	"price": 350,
+	"qty": 1,
+	"bottom": 200
+}, {
+	"name": "內衣",
+	"price": 350,
+	"qty": 1,
+	"bottom": 300
+}, {
+	"name": "英國地圖",
+	"price": 300,
+	"qty": 1,
+	"bottom": 250
+}, {
+	"name": "蔣勳孤獨六講有聲書",
+	"price": 400,
+	"qty": 1,
+	"bottom": 300
+}, {
+	"name": "蔣勳王羲之",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "水滸108",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "水晶盤",
+	"price": 300,
+	"qty": 2,
+	"bottom": 200
+}, {
+	"name": "Poker",
+	"price": 150,
+	"qty": 1,
+	"bottom": 100
+}, {
+	"name": "KLIM碗",
+	"price": 120,
+	"qty": 1,
+	"bottom": 100
+}, {
+	"name": "金園CK5件碗 葡萄圖案",
+	"price": 120,
+	"qty": "1組",
+	"bottom": 100
+}, {
+	"name": "sakura黃碗",
+	"price": 30,
+	"qty": 1,
+	"bottom": 30
+}, {
+	"name": "福壽無疆碗",
+	"price": 180,
+	"qty": 2,
+	"bottom": 150
+}, {
+	"name": "sakura碗盤組",
+	"price": 80,
+	"qty": "1組",
+	"bottom": 50
+}, {
+	"name": "牛奶玻璃匙",
+	"price": 20,
+	"qty": 10,
+	"bottom": 20
+}, {
+	"name": "CK匙",
+	"price": 30,
+	"qty": 1,
+	"bottom": 30
+}, {
+	"name": "green mug",
+	"price": 50,
+	"qty": 2,
+	"bottom": 50
+}, {
+	"name": "康乃馨橢圓盤",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "海芋盤",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "金魚盤",
+	"price": 100,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "牛奶玻璃碟",
+	"price": 30,
+	"qty": 2,
+	"bottom": 20
+}, {
+	"name": "只見線明信片",
+	"price": 50,
+	"qty": "1組",
+	"bottom": 50
+}, {
+	"name": "鮮乳坊提袋",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30
+}, {
+	"name": "starbucks飲料袋",
+	"price": 50,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "yoga鋪巾",
+	"price": 400,
+	"qty": 1,
+	"bottom": 350
+}, {
+	"name": "SKII 小熊",
+	"price": 50,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "MOZ玻璃杯組",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "6入碗筷組",
+	"price": 450,
+	"qty": 1,
+	"bottom": 400
+}, {
+	"name": "美甲",
+	"price": 500,
+	"qty": 1,
+	"bottom": 450
+}, {
+	"name": "super robot筆記本 魔神Z",
+	"price": 950,
+	"qty": 1,
+	"bottom": 850
+}, {
+	"name": "starbucks布章",
+	"price": 120,
+	"qty": 1,
+	"bottom": 100
+}, {
+	"name": "a la sha 筆記本",
+	"price": 120,
+	"qty": 1,
+	"bottom": 100
+}, {
+	"name": "氣墊梳",
+	"price": 120,
+	"qty": 0,
+	"bottom": 100
+}, {
+	"name": "櫻桃小丸子明信片8張",
+	"price": 150,
+	"qty": "1組",
+	"bottom": 150
+}, {
+	"name": "達利明信片",
+	"price": 10,
+	"qty": 3,
+	"bottom": 10
+}, {
+	"name": "手機指扣",
+	"price": 30,
+	"qty": 2,
+	"bottom": 30
+}, {
+	"name": "SKII 包",
+	"price": 150,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "蜘蛛人金屬手機指扣",
+	"price": 50,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "書展徽章筆記本",
+	"price": 50,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "seventeen拼圖",
+	"price": 350,
+	"qty": 1,
+	"bottom": 290
+}, {
+	"name": "林青霞鏡子",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "談徐志摩",
+	"price": 350,
+	"qty": 1,
+	"bottom": 300
+}, {
+	"name": "康寧紫花盤",
+	"price": 50,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "康寧深盤藍花",
+	"price": 200,
+	"qty": 2,
+	"bottom": 150
+}, {
+	"name": "康寧碗",
+	"price": 50,
+	"qty": 1,
+	"bottom": 50
+}, {
+	"name": "大同白碗公",
+	"price": 30,
+	"qty": 2,
+	"bottom": 30
+}, {
+	"name": "大同玫瑰碗公",
+	"price": 50,
+	"qty": 2,
+	"bottom": 50
+}, {
+	"name": "大同中碗公",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "大同大碗公",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "紅紫花碗4件",
+	"price": 100,
+	"qty": "1組",
+	"bottom": 80
+}, {
+	"name": "紫圈碗4件",
+	"price": 100,
+	"qty": "1組",
+	"bottom": 80
+}, {
+	"name": "大千百貨杯",
+	"price": 500,
+	"qty": 1,
+	"bottom": 500
+}, {
+	"name": "康寧Iris shadow 1.5公升 方鍋",
+	"price": 700,
+	"qty": 1,
+	"bottom": 650
+}, {
+	"name": "康寧Iris shadow 3公升 方鍋",
+	"price": 1000,
+	"qty": 1,
+	"bottom": 900
+}, {
+	"name": "波堤獅碗",
+	"price": 20,
+	"qty": 1,
+	"bottom": 20
+}, {
+	"name": "蛋黃哥盤",
+	"price": 30,
+	"qty": 1,
+	"bottom": 30
+}, {
+	"name": "電話卡",
+	"price": 100,
+	"qty": 6,
+	"bottom": 100
+}, {
+	"name": "魔法公主3D拼圖",
+	"price": 200,
+	"qty": 1,
+	"bottom": 0
+}, {
+	"name": "江蕙2025演唱會手燈",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "可伸縮多功能水槽瀝水架 附抹布掛桿濾水架",
+	"price": 150,
+	"qty": 1,
+	"bottom": 120
+}, {
+	"name": "知足常樂",
+	"price": 500,
+	"qty": 1,
+	"bottom": 450
+}, {
+	"name": "歐萊德香水",
+	"price": 1100,
+	"qty": 1,
+	"bottom": 1100
+}, {
+	"name": "熊本熊玻璃瓶(梅酒)",
+	"price": 120,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "熊本熊玻璃瓶(清酒)",
+	"price": 100,
+	"qty": 3,
+	"bottom": 80
+}, {
+	"name": "阿蘇火山牛奶瓶",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "阿部牧場牛奶瓶",
+	"price": 100,
+	"qty": 1,
+	"bottom": 80
+}, {
+	"name": "軒尼詩碗",
+	"price": 150,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "Soill攀岩鞋UK6號",
+	"price": 1200,
+	"qty": 1,
+	"bottom": 1200
+}, {
+	"name": "Soill攀岩鞋UK8號",
+	"price": 1200,
+	"qty": 1,
+	"bottom": 1200
+}, {
+	"name": "台風咖啡杯",
+	"price": 150,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "shot杯5件組",
+	"price": 100,
+	"qty": "1組",
+	"bottom": 100
+}, {
+	"name": "DVD",
+	"price": 150,
+	"qty": 10,
+	"bottom": 0
+}, {
+	"name": "紫水晶石",
+	"price": 20,
+	"qty": 1,
+	"bottom": 10
+}, {
+	"name": "WD不鏽鋼保溫杯",
+	"price": 450,
+	"qty": 1,
+	"bottom": 400
+}, {
+	"name": "S6手足修磨儀",
+	"price": 200,
+	"qty": 1,
+	"bottom": 150
+}, {
+	"name": "金繼IKEA盤",
+	"price": 20,
+	"qty": 1,
+	"bottom": 10
+}]
