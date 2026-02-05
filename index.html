@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>救舅Uncle全商品</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  background: #f4f2ee;
+  color: #2b2b2b;
+}
+
+header {
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.menu {
+  max-width: 520px;
+  margin: auto;
+  padding: 0 16px 40px;
+}
+
+.item {
+  display: flex;
+  gap: 14px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.item img {
+  width: 96px;
+  height: 96px;
+  border-radius: 14px;
+  object-fit: cover;
+  background: linear-gradient(135deg,#ddd,#eee);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #8b5e3c;
+}
+
+.qty {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: none;
+  max-height: none;
+  width: 90%;
+  touch-action: none;
+  transform-origin: center center;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+</style>
+</head>
+
+<body>
+<header>救舅Uncle全商品</header>
+<div class="menu" id="menu"></div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+/* ========= 商品資料（只改這裡） ========= */
+const products = [
+  { "name": "提袋(紫)", "price": 50, "qty": 1, "bottom": 30 },
+  { "name": "提袋(綠)", "price": 50, "qty": 1, "bottom": 30 },
+  { "name": "Lush 提袋", "price": 80, "qty": 1, "bottom": 50 },
+  { "name": "Origins 2013 提袋", "price": 80, "qty": 1, "bottom": 50 },
+  { "name": "黑騎士物語 提袋", "price": 50, "qty": 2, "bottom": 30 },
+  { "name": "人參 提袋", "price": 80, "qty": 1, "bottom": 50 },
+  { "name": "有書之年 提袋", "price": 120, "qty": 1, "bottom": 100 },
+  { "name": "貓 提袋", "price": 100, "qty": 1, "bottom": 80 },
+  { "name": "Taiwan Industrail Heritage 提袋", "price": 120, "qty": 1, "bottom": 100 },
+  { "name": "中研院 提袋", "price": 100, "qty": 1, "bottom": 80 },
+  { "name": "藤編包", "price": 550, "qty": 1, "bottom": 500 },
+  { "name": "mizuno襪子", "price": 450, "qty": 2, "bottom": 400 },
+  { "name": "bodum保溫壺", "price": 350, "qty": 1, "bottom": 200 },
+  { "name": "內衣", "price": 350, "qty": 1, "bottom": 300 },
+  { "name": "英國地圖", "price": 300, "qty": 1, "bottom": 250 },
+  { "name": "蔣勳孤獨六講有聲書", "price": 400, "qty": 1, "bottom": 300 },
+  { "name": "蔣勳王羲之", "price": 200, "qty": 1, "bottom": 150 },
+  { "name": "水滸108", "price": 200, "qty": 1, "bottom": 150 },
+  { "name": "水晶盤", "price": 300, "qty": 2, "bottom": 200 },
+  { "name": "Poker", "price": 150, "qty": 1, "bottom": 100 },
+  { "name": "KLIM碗", "price": 120, "qty": 1, "bottom": 100 },
+  { "name": "金園CK5件碗 葡萄圖案", "price": 120, "qty": "1組", "bottom": 100 },
+  { "name": "sakura黃碗", "price": 30, "qty": 1, "bottom": 30 },
+  { "name": "福壽無疆碗", "price": 180, "qty": 2, "bottom": 150 },
+  { "name": "sakura碗盤組", "price": 80, "qty": "1組", "bottom": 50 },
+  { "name": "牛奶玻璃匙", "price": 20, "qty": 10, "bottom": 20 },
+  { "name": "CK匙", "price": 30, "qty": 1, "bottom": 30 },
+  { "name": "green mug", "price": 50, "qty": 2, "bottom": 50 },
+  { "name": "康乃馨橢圓盤", "price": 100, "qty": 1, "bottom": 80 },
+  { "name": "海芋盤", "price": 100, "qty": 1, "bottom": 80 },
+  { "name": "金魚盤", "price": 100, "qty": 1, "bottom": 50 },
+  { "name": "牛奶玻璃碟", "price": 30, "qty": 2, "bottom": 20 },
+  { "name": "只見線明信片", "price": 50, "qty": "1組", "bottom": 50 },
+  { "name": "鮮乳坊提袋", "price": 50, "qty": 1, "bottom": 30 },
+  { "name": "starbucks飲料袋", "price": 50, "qty": 1, "bottom": 50 },
+  { "name": "yoga鋪巾", "price": 400, "qty": 1, "bottom": 350 },
+  { "name": "SKII bear", "price": 50, "qty": 1, "bottom": 50 },
+  { "name": "MOZ玻璃杯組", "price": 200, "qty": 1, "bottom": 150 },
+  { "name": "6入碗筷組", "price": 450, "qty": 1, "bottom": 400 },
+  { "name": "美甲", "price": 500, "qty": 1, "bottom": 450 },
+  { "name": "super robot筆記本 魔神Z", "price": 950, "qty": 1, "bottom": 850 },
+  { "name": "starbucks布章", "price": 120, "qty": 1, "bottom": 100 },
+  { "name": "a la sha 筆記本", "price": 120, "qty": 1, "bottom": 100 },
+  { "name": "氣墊梳", "price": 120, "qty": 1, "bottom": 100 },
+  { "name": "櫻桃小丸子明信片", "price": 150, "qty": "1組", "bottom": 150 },
+  { "name": "達利明信片", "price": 10, "qty": 3, "bottom": 10 },
+  { "name": "手機指扣", "price": 30, "qty": 2, "bottom": 30 },
+  { "name": "SKII 包", "price": 150, "qty": 1, "bottom": 150 },
+  { "name": "蜘蛛人金屬手機指扣", "price": 50, "qty": 1, "bottom": 50 },
+  { "name": "書展徽章筆記本", "price": 50, "qty": 1, "bottom": 50 },
+  { "name": "seventeen拼圖", "price": 350, "qty": 1, "bottom": 290 },
+  { "name": "林青霞鏡子", "price": 200, "qty": 1, "bottom": 150 },
+  { "name": "談徐志摩", "price": 350, "qty": 1, "bottom": 300 },
+  { "name": "康寧紫花盤", "price": 50, "qty": 1, "bottom": 50 },
+  { "name": "康寧深盤藍花", "price": 200, "qty": 2, "bottom": 150 },
+  { "name": "康寧碗", "price": 50, "qty": 1, "bottom": 50 },
+  { "name": "大同白碗公", "price": 30, "qty": 2, "bottom": 30 },
+  { "name": "大同玫瑰碗公", "price": 50, "qty": 2, "bottom": 50 },
+  { "name": "大同中碗公", "price": 100, "qty": 1, "bottom": 80 },
+  { "name": "大同大碗公", "price": 200, "qty": 1, "bottom": 150 },
+  { "name": "紅紫花碗4件", "price": 100, "qty": "1組", "bottom": 80 },
+  { "name": "紫圈碗4件", "price": 100, "qty": "1組", "bottom": 80 },
+  { "name": "大千百貨杯", "price": 500, "qty": 1, "bottom": 500 },
+  { "name": "康寧Iris shadow 1.5公升 方鍋", "price": 700, "qty": 1, "bottom": 650 },
+  { "name": "康寧Iris shadow 3公升 方鍋", "price": 1000, "qty": 1, "bottom": 900 },
+  { "name": "波堤獅碗", "price": 20, "qty": 1, "bottom": 20 },
+  { "name": "蛋黃哥盤", "price": 30, "qty": 1, "bottom": 30 },
+  { "name": "電話卡", "price": 100, "qty": 6, "bottom": 100 },
+  { "name": "魔法公主3D拼圖", "price": 200, "qty": 1, "bottom": 0 },
+  { "name": "江蕙2025演唱會手燈", "price": 200, "qty": 1, "bottom": 150 },
+  { "name": "可伸縮多功能水槽瀝水架 附抹布掛桿濾水架", "price": 150, "qty": 1, "bottom": 120 },
+  { "name": "蜘足", "price": 500, "qty": 1, "bottom": 450 },
+  { "name": "歐萊德香水", "price": 1100, "qty": 1, "bottom": 1100 },
+  { "name": "熊本熊玻璃瓶(梅酒)", "price": 120, "qty": 1, "bottom": 80 },
+  { "name": "熊本熊玻璃瓶(清酒)", "price": 100, "qty": 3, "bottom": 80 },
+  { "name": "阿蘇火山牛奶瓶", "price": 100, "qty": 1, "bottom": 80 },
+  { "name": "阿部牧場牛奶瓶", "price": 100, "qty": 1, "bottom": 80 },
+  { "name": "軒尼詩碗", "price": 150, "qty": 1, "bottom": 150 },
+  { "name": "Soill岩鞋", "price": 1200, "qty": 1, "bottom": 1200 },
+  { "name": "台風咖啡杯", "price": 150, "qty": 1, "bottom": 150 },
+  { "name": "shot杯5件組", "price": 100, "qty": "1組", "bottom": 100 },
+  { "name": "DVD", "price": 150, "qty": 10, "bottom": 0 },
+  { "name": "紫水晶石", "price": 20, "qty": 1, "bottom": 10 }
+];
+/* ========= 產生商品 ========= */
+const menu = document.getElementById("menu");
+products.forEach(p => {
+  const item = document.createElement("div");
+  item.className = "item";
+
+  const img = document.createElement("img");
+  img.src = `./image/${p.name}.jpg`;
+  img.alt = p.name;
+  img.addEventListener("click", () => openLightbox(img.src));
+
+  const info = document.createElement("div");
+  info.className = "info";
+  info.innerHTML = `
+    <div class="name">${p.name}</div>
+    <div class="meta">
+      <div class="price">NT$ ${p.price}</div>
+      <div class="qty">剩餘 ${p.qty}</div>
+    </div>
+  `;
+
+  item.appendChild(img);
+  item.appendChild(info);
+  menu.appendChild(item);
+});
+
+/* ========= Lightbox + 手勢 ========= */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+let scale = 1, startScale = 1;
+let posX = 0, posY = 0;
+let startX = 0, startY = 0;
+let lastTouchDistance = 0;
+
+function updateTransform() {
+  lightboxImg.style.transform =
+    `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+
+function getDistance(t1, t2) {
+  return Math.hypot(
+    t2.clientX - t1.clientX,
+    t2.clientY - t1.clientY
+  );
+}
+
+function openLightbox(src) {
+  lightboxImg.src = src;
+  scale = 1;
+  posX = 0;
+  posY = 0;
+  updateTransform();
+  lightbox.classList.add("show");
+}
+
+lightboxImg.addEventListener("touchstart", e => {
+  if (e.touches.length === 1) {
+    startX = e.touches[0].clientX - posX;
+    startY = e.touches[0].clientY - posY;
+  }
+  if (e.touches.length === 2) {
+    lastTouchDistance = getDistance(e.touches[0], e.touches[1]);
+    startScale = scale;
+  }
+});
+
+lightboxImg.addEventListener("touchmove", e => {
+  e.preventDefault();
+
+  if (e.touches.length === 1) {
+    posX = e.touches[0].clientX - startX;
+    posY = e.touches[0].clientY - startY;
+    updateTransform();
+  }
+
+  if (e.touches.length === 2) {
+    const newDistance = getDistance(e.touches[0], e.touches[1]);
+    scale = Math.min(Math.max(startScale * (newDistance / lastTouchDistance), 1), 4);
+    updateTransform();
+  }
+}, { passive: false });
+
+lightbox.addEventListener("click", () => {
+  lightbox.classList.remove("show");
+  lightboxImg.src = "";
+  scale = 1;
+  posX = 0;
+  posY = 0;
+});
+</script>
+</body>
+</html>
