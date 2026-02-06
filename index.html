@@ -468,7 +468,7 @@ fetch('./products.json?t=' + Math.random())
   .then(products => {
     for(var i = 0;i< products.length;i++){
       if(products[i].price <= 50)
-        products[i].category.add("銅板價");
+        products[i].category.push("銅板價");
     }
     allProducts = products;
     renderProducts(allProducts);
