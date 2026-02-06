@@ -227,12 +227,14 @@
 	"category": ["穿搭", "生活", "全新"]
 }, {
 	"name": "櫻桃小丸子明信片8張",
+	"display_name": "櫻桃小丸子明信片 8張不同人物",
 	"price": 150,
 	"qty": "1組",
 	"bottom": 150,
 	"category": ["文具", "生活", "全新"]
 }, {
 	"name": "達利明信片",
+	"display_name": "瘋狂達利明信片",
 	"price": 10,
 	"qty": 3,
 	"bottom": 10,
