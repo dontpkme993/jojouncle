@@ -14,10 +14,20 @@
 	"qty": 1,
 	"bottom": 150
 }, {
+	"name": "黑外套",
+	"price": 250,
+	"qty": 1,
+	"bottom": 150
+}, {
 	"name": "藤編包",
 	"price": 550,
 	"qty": 1,
 	"bottom": 500
+}, {
+	"name": "憂傷馬戲團筆袋",
+	"price": 100,
+	"qty": 1,
+	"bottom": 50
 }, {
 	"name": "mizuno運動襪3雙",
 	"price": 450,
@@ -29,7 +39,7 @@
 	"qty": 1,
 	"bottom": 200
 }, {
-	"name": "內衣",
+	"name": "運動內衣",
 	"price": 350,
 	"qty": 1,
 	"bottom": 300
@@ -444,7 +454,7 @@
 	"qty": 1,
 	"bottom": 300
 }, {
-	"name": "蔣勳王羲之",
+	"name": "蔣勳看王羲之 深度導覽有聲書",
 	"price": 200,
 	"qty": 1,
 	"bottom": 150
@@ -458,4 +468,9 @@
 	"price": 50,
 	"qty": 1,
 	"bottom": 10
+}, {
+	"name": "古城佩特拉",
+	"price": 80,
+	"qty": 1,
+	"bottom": 20
 }]
