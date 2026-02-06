@@ -679,8 +679,8 @@
 }, {
 	"name": "TNF短T",
 	"display_name": "The North Face 短T",
-	"price": 150,
+	"price": 600,
 	"qty": 1,
-	"bottom": 100,
+	"bottom": 500,
 	"category": ["穿搭", "全新"]
 }]
