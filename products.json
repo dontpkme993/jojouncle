@@ -3,19 +3,19 @@
 	"price": 300,
 	"qty": 1,
 	"bottom": 150,
-	"category": ["穿搭"]
+	"category": ["穿搭", "全新"]
 }, {
 	"name": "尼泊爾民族風長袖上衣(綠)",
 	"price": 300,
 	"qty": 1,
 	"bottom": 150,
-	"category": ["穿搭"]
+	"category": ["穿搭", "全新"]
 }, {
 	"name": "尼泊爾民族風7分袖長版上衣(米)",
 	"price": 300,
 	"qty": 1,
 	"bottom": 150,
-	"category": ["穿搭"]
+	"category": ["穿搭", "全新"]
 }, {
 	"name": "黑外套",
 	"price": 250,
@@ -27,33 +27,33 @@
 	"price": 550,
 	"qty": 1,
 	"bottom": 500,
-	"category": ["穿搭", "提袋"]
+	"category": ["穿搭", "提袋", "全新"]
 }, {
 	"name": "憂傷馬戲團筆袋",
 	"price": 150,
 	"qty": 1,
 	"bottom": 50,
-	"category": ["文具"]
+	"category": ["文具", "全新"]
 }, {
 	"name": "mizuno運動襪3雙",
 	"display_name": "全新美津農運動襪3入組",
 	"price": 450,
 	"qty": "2組",
 	"bottom": 400,
-	"category": ["穿搭", "運動"]
+	"category": ["穿搭", "運動", "全新"]
 }, {
 	"name": "bodum保溫壺",
 	"price": 350,
 	"qty": 1,
 	"bottom": 200,
-	"category": ["運動"]
+	"category": ["運動", "全新"]
 }, {
 	"name": "運動內衣",
 	"display_name": "EVERYDAY BINEW BRA (M)",
 	"price": 350,
 	"qty": 1,
 	"bottom": 300,
-	"category": ["穿搭"]
+	"category": ["穿搭", "全新"]
 }, {
 	"name": "水晶盤",
 	"display_name": "水晶玻璃盤",
@@ -67,7 +67,7 @@
 	"price": 150,
 	"qty": 1,
 	"bottom": 100,
-	"category": ["生活", "擺設"]
+	"category": ["生活", "擺設", "全新"]
 }, {
 	"name": "KLIM碗",
 	"price": 120,
@@ -149,7 +149,7 @@
 	"price": 50,
 	"qty": "1組",
 	"bottom": 50,
-	"category": ["文具", "生活"]
+	"category": ["文具", "生活", "全新"]
 }, {
 	"name": "鮮乳坊提袋",
 	"price": 50,
@@ -168,68 +168,68 @@
 	"price": 400,
 	"qty": 1,
 	"bottom": 350,
-	"category": ["運動"]
+	"category": ["運動", "全新"]
 }, {
 	"name": "SKII 小熊",
 	"price": 50,
 	"qty": 1,
 	"bottom": 50,
-	"category": ["擺設", "穿搭"]
+	"category": ["擺設", "穿搭", "全新"]
 }, {
 	"name": "MOZ玻璃杯組",
 	"display_name": "MOZ玻璃杯組2入",
 	"price": 200,
 	"qty": "1組",
 	"bottom": 150,
-	"category": ["器皿"]
+	"category": ["器皿", "全新"]
 }, {
 	"name": "6入碗筷組",
 	"price": 450,
 	"qty": "1組",
 	"bottom": 400,
-	"category": ["器皿"]
+	"category": ["器皿", "全新"]
 }, {
 	"name": "美甲",
 	"price": 500,
 	"qty": 1,
 	"bottom": 450,
-	"category": ["穿搭", "生活"]
+	"category": ["穿搭", "生活", "全新"]
 }, {
 	"name": "super robot筆記本 魔神Z",
 	"price": 950,
 	"qty": 1,
 	"bottom": 850,
-	"category": ["文具"]
+	"category": ["文具", "全新"]
 }, {
 	"name": "starbucks布章",
 	"price": 120,
 	"qty": 1,
 	"bottom": 100,
-	"category": ["穿搭", "生活"]
+	"category": ["穿搭", "生活", "全新"]
 }, {
 	"name": "a la sha 筆記本",
 	"price": 120,
 	"qty": 1,
 	"bottom": 100,
-	"category": ["文具"]
+	"category": ["文具", "全新"]
 }, {
 	"name": "氣墊梳",
 	"price": 120,
 	"qty": 1,
 	"bottom": 100,
-	"category": ["穿搭", "生活"]
+	"category": ["穿搭", "生活", "全新"]
 }, {
 	"name": "櫻桃小丸子明信片8張",
 	"price": 150,
 	"qty": "1組",
 	"bottom": 150,
-	"category": ["文具", "生活"]
+	"category": ["文具", "生活", "全新"]
 }, {
 	"name": "達利明信片",
 	"price": 10,
 	"qty": 3,
 	"bottom": 10,
-	"category": ["文具", "生活"]
+	"category": ["文具", "生活", "全新"]
 }, {
 	"name": "手機指扣",
 	"price": 30,
@@ -241,13 +241,13 @@
 	"price": 150,
 	"qty": 1,
 	"bottom": 150,
-	"category": ["生活"]
+	"category": ["生活", "全新"]
 }, {
 	"name": "蜘蛛人金屬手機指扣",
 	"price": 50,
 	"qty": 1,
 	"bottom": 50,
-	"category": ["生活"]
+	"category": ["生活", "全新"]
 }, {
 	"name": "書展徽章筆記本",
 	"display_name": "2024國際書展空白筆記本 + 徽章一枚",
@@ -260,7 +260,7 @@
 	"price": 350,
 	"qty": 1,
 	"bottom": 290,
-	"category": ["生活"]
+	"category": ["生活", "全新"]
 }, {
 	"name": "林青霞鏡子",
 	"price": 200,
@@ -340,13 +340,13 @@
 	"price": 700,
 	"qty": 1,
 	"bottom": 650,
-	"category": ["器皿"]
+	"category": ["器皿", "全新"]
 }, {
 	"name": "康寧Iris shadow 3公升 方鍋",
 	"price": 1000,
 	"qty": 1,
 	"bottom": 900,
-	"category": ["器皿"]
+	"category": ["器皿", "全新"]
 }, {
 	"name": "波堤獅碗",
 	"price": 20,
@@ -376,13 +376,13 @@
 	"price": 200,
 	"qty": 1,
 	"bottom": 150,
-	"category": ["擺設"]
+	"category": ["擺設", "全新"]
 }, {
 	"name": "可伸縮多功能水槽瀝水架 附抹布掛桿濾水架",
 	"price": 150,
 	"qty": 1,
 	"bottom": 120,
-	"category": ["生活"]
+	"category": ["生活", "全新"]
 }, {
 	"name": "小小兵玩具",
 	"price": 80,
@@ -395,13 +395,13 @@
 	"price": 500,
 	"qty": 1,
 	"bottom": 450,
-	"category": ["生活", "擺設"]
+	"category": ["生活", "擺設", "全新"]
 }, {
 	"name": "歐萊德香水",
 	"price": 1100,
 	"qty": 1,
 	"bottom": 1100,
-	"category": ["穿搭"]
+	"category": ["穿搭", "全新"]
 }, {
 	"name": "熊本熊玻璃瓶(梅酒)",
 	"display_name": "熊本熊《瑞鷹梅酒》梅酒玻璃空瓶",
@@ -453,7 +453,7 @@
 	"price": 150,
 	"qty": 1,
 	"bottom": 150,
-	"category": ["生活", "器皿"]
+	"category": ["生活", "器皿", "全新"]
 }, {
 	"name": "shot杯5件組",
 	"price": 100,
@@ -478,7 +478,7 @@
 	"price": 450,
 	"qty": 1,
 	"bottom": 400,
-	"category": ["器皿", "運動"]
+	"category": ["器皿", "運動", "全新"]
 }, {
 	"name": "S6手足修磨儀",
 	"price": 200,
@@ -581,12 +581,78 @@
 	"price": 50,
 	"qty": 1,
 	"bottom": 10,
-	"category": ["生活", "器皿"]
+	"category": ["生活", "器皿", "全新"]
 }, {
 	"name": "古城佩特拉",
 	"display_name": "古城佩特拉 桌面擺飾",
 	"price": 80,
 	"qty": 1,
 	"bottom": 20,
-	"category": ["擺設"]
+	"category": ["擺設", "全新"]
+}, {
+	"name": "土耳其燈",
+	"price": 300,
+	"qty": 1,
+	"bottom": 200,
+	"category": ["擺設", "生活"]
+}, {
+	"name": "襪子",
+	"price": 50,
+	"qty": 1,
+	"bottom": 50,
+	"category": ["穿搭", "運動", "全新"]
+}, {
+	"name": "襪子",
+	"price": 30,
+	"qty": 1,
+	"bottom": 30,
+	"category": ["穿搭", "運動", "全新"]
+}, {
+	"name": "iPhone 13 Pro手機殼",
+	"price": 100,
+	"qty": 1,
+	"bottom": 50,
+	"category": ["生活"]
+}, {
+	"name": "水瓶",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30,
+	"category": ["器皿"]
+}, {
+	"name": "相框",
+	"price": 20,
+	"qty": 1,
+	"bottom": 10,
+	"category": ["生活"]
+}, {
+	"name": "矽膠保鮮袋",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30,
+	"category": ["生活"]
+}, {
+	"name": "2026手帳本",
+	"price": 80,
+	"qty": 1,
+	"bottom": 50,
+	"category": ["生活", "文具"]
+}, {
+	"name": "檸檬背心",
+	"price": 150,
+	"qty": 1,
+	"bottom": 100,
+	"category": ["穿搭", "全新"]
+}, {
+	"name": "格紋短褲",
+	"price": 150,
+	"qty": 1,
+	"bottom": 100,
+	"category": ["穿搭", "全新"]
+}, {
+	"name": "TNF短T",
+	"price": 150,
+	"qty": 1,
+	"bottom": 100,
+	"category": ["穿搭", "全新"]
 }]
