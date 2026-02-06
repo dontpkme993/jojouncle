@@ -663,7 +663,7 @@
 	"price": 80,
 	"qty": 1,
 	"bottom": 50,
-	"category": ["生活", "文具"]
+	"category": ["生活", "文具", "全新"]
 }, {
 	"name": "檸檬背心",
 	"price": 150,
