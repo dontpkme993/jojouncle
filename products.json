@@ -158,6 +158,7 @@
 	"category": ["提袋"]
 }, {
 	"name": "starbucks飲料袋",
+	"display_name": "星巴克飲料提袋",
 	"price": 50,
 	"qty": 1,
 	"bottom": 50,
@@ -190,30 +191,35 @@
 	"category": ["器皿", "全新"]
 }, {
 	"name": "美甲",
+	"display_name": "VOGUE Tippy 穿戴式美甲",
 	"price": 500,
 	"qty": 1,
 	"bottom": 450,
 	"category": ["穿搭", "生活", "全新"]
 }, {
 	"name": "super robot筆記本 魔神Z",
+	"display_name": "super robot 魔神Z筆記本",
 	"price": 950,
 	"qty": 1,
 	"bottom": 850,
 	"category": ["文具", "全新"]
 }, {
 	"name": "starbucks布章",
+	"display_name": "星巴克布章",
 	"price": 120,
 	"qty": 1,
 	"bottom": 100,
 	"category": ["穿搭", "生活", "全新"]
 }, {
 	"name": "a la sha 筆記本",
+	"display_name": "à la sha 筆記本",
 	"price": 120,
 	"qty": 1,
 	"bottom": 100,
 	"category": ["文具", "全新"]
 }, {
 	"name": "氣墊梳",
+	"display_name": "順髮氣墊梳組",
 	"price": 120,
 	"qty": 1,
 	"bottom": 100,
