@@ -404,14 +404,14 @@
 	"category": ["穿搭"]
 }, {
 	"name": "熊本熊玻璃瓶(梅酒)",
-	"display_name": "熊本熊《瑞鷹梅酒》梅酒UMESHU玻璃空瓶",
+	"display_name": "熊本熊《瑞鷹梅酒》梅酒玻璃空瓶",
 	"price": 120,
 	"qty": 1,
 	"bottom": 80,
 	"category": ["擺設", "器皿"]
 }, {
 	"name": "熊本熊玻璃瓶(清酒)",
-	"display_name": "熊本熊包裝《瑞鷹ZUIYO CUP》清酒SAKE玻璃空瓶",
+	"display_name": "熊本熊《瑞鷹ZUIYO CUP》清酒玻璃空瓶",
 	"price": 100,
 	"qty": 3,
 	"bottom": 80,
