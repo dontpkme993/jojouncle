@@ -30,12 +30,13 @@
 	"category": ["穿搭", "提袋"]
 }, {
 	"name": "憂傷馬戲團筆袋",
-	"price": 100,
+	"price": 150,
 	"qty": 1,
 	"bottom": 50,
 	"category": ["文具"]
 }, {
 	"name": "mizuno運動襪3雙",
+	"display_name": "全新美津農運動襪3入組",
 	"price": 450,
 	"qty": "2組",
 	"bottom": 400,
@@ -249,6 +250,7 @@
 	"category": ["生活"]
 }, {
 	"name": "書展徽章筆記本",
+	"display_name": "2024國際書展空白筆記本 + 徽章一枚",
 	"price": 50,
 	"qty": 1,
 	"bottom": 50,
@@ -402,14 +404,14 @@
 	"category": ["穿搭"]
 }, {
 	"name": "熊本熊玻璃瓶(梅酒)",
-	"display_name": "熊本熊玻璃罐(梅酒款)",
+	"display_name": "熊本熊《瑞鷹梅酒》梅酒UMESHU玻璃空瓶",
 	"price": 120,
 	"qty": 1,
 	"bottom": 80,
 	"category": ["擺設", "器皿"]
 }, {
 	"name": "熊本熊玻璃瓶(清酒)",
-	"display_name": "熊本熊玻璃罐(清酒款)",
+	"display_name": "熊本熊包裝《瑞鷹ZUIYO CUP》清酒SAKE玻璃空瓶",
 	"price": 100,
 	"qty": 3,
 	"bottom": 80,
