@@ -453,6 +453,7 @@
 	"category": ["生活", "器皿"]
 }, {
 	"name": "DVD",
+	"display_name": "多款DVD",
 	"price": 150,
 	"qty": 10,
 	"bottom": 0,
