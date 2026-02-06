@@ -456,7 +456,7 @@
 	"price": 150,
 	"qty": 10,
 	"bottom": 0,
-	"category": ["生活"]
+	"category": ["生活", "影音"]
 }, {
 	"name": "紫水晶石",
 	"price": 20,
