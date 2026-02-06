@@ -372,6 +372,7 @@ h3 {
 <div id="tagFilterSentinel"></div>
 <div class="tag-filter" id="tagFilter">
   <span class="tag" data-tag="全新">全新</span>
+  <span class="tag" data-tag="銅板價">銅板價</span>
   <span class="tag" data-tag="穿搭">穿搭</span>
   <span class="tag" data-tag="提袋">提袋</span>
   <span class="tag" data-tag="文具">文具</span>
@@ -465,6 +466,10 @@ function renderProducts(products) {
 fetch('./products.json?t=' + Math.random())
   .then(res => res.json())
   .then(products => {
+    for(var i = 0;i< products.length;i++){
+      if(products[i].price <= 50)
+        products[i].category.add("銅板價");
+    }
     allProducts = products;
     renderProducts(allProducts);
   });

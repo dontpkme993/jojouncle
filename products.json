@@ -596,13 +596,15 @@
 	"bottom": 200,
 	"category": ["擺設", "生活"]
 }, {
-	"name": "襪子",
+	"name": "襪子50",
+	"display_name": "襪子",
 	"price": 50,
 	"qty": 1,
 	"bottom": 50,
 	"category": ["穿搭", "運動", "全新"]
 }, {
-	"name": "襪子",
+	"name": "襪子30",
+	"display_name": "襪子",
 	"price": 30,
 	"qty": 1,
 	"bottom": 30,
