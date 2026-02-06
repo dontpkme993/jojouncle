@@ -62,6 +62,7 @@
 	"category": ["器皿", "擺設"]
 }, {
 	"name": "Poker",
+	"display_name": "麒麟一番榨<生> 撲克牌",
 	"price": 150,
 	"qty": 1,
 	"bottom": 100,
