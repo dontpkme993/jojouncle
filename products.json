@@ -418,12 +418,14 @@
 	"category": ["擺設", "器皿"]
 }, {
 	"name": "阿蘇火山牛奶瓶",
+	"display_name": "阿蘇火山牛奶空瓶",
 	"price": 100,
 	"qty": 1,
 	"bottom": 80,
 	"category": ["擺設", "器皿"]
 }, {
 	"name": "阿部牧場牛奶瓶",
+	"display_name": "阿部牧場牛奶瓶",
 	"price": 100,
 	"qty": 1,
 	"bottom": 80,
