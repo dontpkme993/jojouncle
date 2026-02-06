@@ -115,6 +115,43 @@ header::after {
   color: #666;
 }
 
+/* ===== Tag Filter ===== */
+.tag-filter {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 16px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tag-filter .tag {
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #8b5e3c;
+  background: #fff;
+  border: 1.5px solid #c49a6c;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tag-filter .tag.active {
+  color: #fff;
+  background: #8b5e3c;
+  border-color: #8b5e3c;
+  box-shadow: 0 2px 8px rgba(139, 94, 60, 0.3);
+}
+
+.tag-filter .tag:active {
+  transform: scale(0.95);
+}
+
 /* ===== Lightbox ===== */
 .lightbox {
   position: fixed;
@@ -294,6 +331,16 @@ h3 {
 <header>救舊Uncle</header>
 <h2>15號攤位 全商品購物清單</h2>
 <h3>邊緣人市集 | 四四南村 舊愛跳蚤市</h3>
+<div class="tag-filter" id="tagFilter">
+  <span class="tag" data-tag="穿搭">穿搭</span>
+  <span class="tag" data-tag="提袋">提袋</span>
+  <span class="tag" data-tag="文具">文具</span>
+  <span class="tag" data-tag="運動">運動</span>
+  <span class="tag" data-tag="器皿">器皿</span>
+  <span class="tag" data-tag="擺設">擺設</span>
+  <span class="tag" data-tag="生活">生活</span>
+  <span class="tag" data-tag="影音">影音</span>
+</div>
 <div class="menu" id="menu"></div>
 
 <div class="lightbox" id="lightbox">
@@ -323,40 +370,69 @@ document.getElementById("adCloseBtn").addEventListener("click", () => {
 /* ========= 產生商品 ========= */
 const menu = document.getElementById("menu");
 const isAdmin = new URLSearchParams(window.location.search).get('admin') === '1';
+let allProducts = [];
+
+function renderProducts(products) {
+  menu.innerHTML = '';
+  products.forEach(p => {
+    const item = document.createElement("div");
+    item.className = parseInt(p.qty) === 0 ? "item sold-out" : "item";
+    const displayName = p.display_name || p.name;
+
+    const img = document.createElement("img");
+    img.src = `./image/${p.name}.jpg`;
+    img.alt = displayName;
+    item.addEventListener("click", () => openLightbox(img.src, displayName));
+
+    const bottomHTML = isAdmin && p.bottom != null
+      ? `<div class="price" style="color:#c0392b;">底價 NT$ ${p.bottom}</div>`
+      : '';
+
+    const info = document.createElement("div");
+    info.className = "info";
+    info.innerHTML = `
+      <div class="name">${displayName}</div>
+      <div class="meta">
+        <div class="price">NT$ ${p.price}</div>
+        <div class="qty">剩餘 ${p.qty}</div>
+      </div>
+      ${bottomHTML}
+    `;
+
+    item.appendChild(img);
+    item.appendChild(info);
+    menu.appendChild(item);
+  });
+}
 
 fetch('./products.json?t=' + Math.random())
   .then(res => res.json())
   .then(products => {
-    products.forEach(p => {
-      const item = document.createElement("div");
-      item.className = parseInt(p.qty) === 0 ? "item sold-out" : "item";
-      const displayName = p.display_name || p.name;
-
-      const img = document.createElement("img");
-      img.src = `./image/${p.name}.jpg`;
-      img.alt = displayName;
-      item.addEventListener("click", () => openLightbox(img.src, displayName));
-
-      const bottomHTML = isAdmin && p.bottom != null
-        ? `<div class="price" style="color:#c0392b;">底價 NT$ ${p.bottom}</div>`
-        : '';
-
-      const info = document.createElement("div");
-      info.className = "info";
-      info.innerHTML = `
-        <div class="name">${displayName}</div>
-        <div class="meta">
-          <div class="price">NT$ ${p.price}</div>
-          <div class="qty">剩餘 ${p.qty}</div>
-        </div>
-        ${bottomHTML}
-      `;
-
-      item.appendChild(img);
-      item.appendChild(info);
-      menu.appendChild(item);
-    });
+    allProducts = products;
+    renderProducts(allProducts);
   });
+
+/* ========= 標籤篩選 ========= */
+const activeTags = new Set();
+document.getElementById("tagFilter").addEventListener("click", e => {
+  const tag = e.target.closest('.tag');
+  if (!tag) return;
+  const value = tag.dataset.tag;
+  if (activeTags.has(value)) {
+    activeTags.delete(value);
+    tag.classList.remove("active");
+  } else {
+    activeTags.add(value);
+    tag.classList.add("active");
+  }
+  if (activeTags.size === 0) {
+    renderProducts(allProducts);
+  } else {
+    renderProducts(allProducts.filter(p =>
+      p.category && p.category.some(c => activeTags.has(c))
+    ));
+  }
+});
 
 /* ========= Lightbox + 手勢 ========= */
 const lightbox = document.getElementById("lightbox");
