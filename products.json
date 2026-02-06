@@ -173,6 +173,7 @@
 	"category": ["運動", "全新"]
 }, {
 	"name": "SKII 小熊",
+	"display_name": "SK-II 小熊吊飾",
 	"price": 50,
 	"qty": 1,
 	"bottom": 50,
@@ -247,6 +248,7 @@
 	"category": ["生活"]
 }, {
 	"name": "SKII 包",
+	"display_name": "SK-II小金球化妝包",
 	"price": 150,
 	"qty": 1,
 	"bottom": 150,
