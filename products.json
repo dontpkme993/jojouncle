@@ -48,11 +48,11 @@
 	"category": ["運動"]
 }, {
 	"name": "運動內衣",
-	"display_name": "運動內衣 (M)",
+	"display_name": "EVERYDAY BINEW BRA (M)",
 	"price": 350,
 	"qty": 1,
 	"bottom": 300,
-	"category": ["穿搭", "運動"]
+	"category": ["穿搭"]
 }, {
 	"name": "水晶盤",
 	"display_name": "水晶玻璃盤",
@@ -385,6 +385,7 @@
 	"category": ["生活", "擺設"]
 }, {
 	"name": "知足常樂",
+	"display_name": "中國龍泉青瓷 哥弟古窯 《知足常樂》世界非物質文化遺產",
 	"price": 500,
 	"qty": 1,
 	"bottom": 450,
@@ -461,7 +462,7 @@
 }, {
 	"name": "紫水晶石",
 	"price": 20,
-	"qty": 1,
+	"qty": "1組",
 	"bottom": 10,
 	"category": ["生活", "擺設"]
 }, {
