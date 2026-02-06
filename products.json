@@ -40,11 +40,13 @@
 	"bottom": 200
 }, {
 	"name": "運動內衣",
+	"display_name": "運動內衣 (M)",
 	"price": 350,
 	"qty": 1,
 	"bottom": 300
 }, {
 	"name": "水晶盤",
+	"display_name": "水晶玻璃盤",
 	"price": 300,
 	"qty": 2,
 	"bottom": 200
@@ -90,6 +92,7 @@
 	"bottom": 30
 }, {
 	"name": "green mug",
+	"display_name": "綠色馬克杯",
 	"price": 50,
 	"qty": 2,
 	"bottom": 50
@@ -130,6 +133,7 @@
 	"bottom": 50
 }, {
 	"name": "yoga鋪巾",
+	"display_name": "瑜珈舖巾",
 	"price": 400,
 	"qty": 1,
 	"bottom": 350
@@ -139,9 +143,9 @@
 	"qty": 1,
 	"bottom": 50
 }, {
-	"name": "MOZ玻璃杯組",
+	"name": "MOZ玻璃杯組2入",
 	"price": 200,
-	"qty": 1,
+	"qty": "1組",
 	"bottom": 150
 }, {
 	"name": "6入碗筷組",
@@ -215,6 +219,7 @@
 	"bottom": 150
 }, {
 	"name": "談徐志摩",
+	"display_name": "《談徐志摩》",
 	"price": 350,
 	"qty": 1,
 	"bottom": 300
@@ -265,6 +270,7 @@
 	"bottom": 80
 }, {
 	"name": "大千百貨杯",
+	"display_name": "大千百貨玻璃杯",
 	"price": 500,
 	"qty": 1,
 	"bottom": 500
@@ -325,11 +331,13 @@
 	"bottom": 1100
 }, {
 	"name": "熊本熊玻璃瓶(梅酒)",
+	"display_name": "熊本熊玻璃罐(梅酒款)",
 	"price": 120,
 	"qty": 1,
 	"bottom": 80
 }, {
 	"name": "熊本熊玻璃瓶(清酒)",
+	"display_name": "熊本熊玻璃罐(清酒款)",
 	"price": 100,
 	"qty": 3,
 	"bottom": 80
@@ -460,6 +468,7 @@
 	"bottom": 150
 }, {
 	"name": "水滸108",
+	"display_name": "水滸108 紀念EP",
 	"price": 200,
 	"qty": 1,
 	"bottom": 150
@@ -470,6 +479,7 @@
 	"bottom": 10
 }, {
 	"name": "古城佩特拉",
+	"display_name": "古城佩特拉 桌面擺飾",
 	"price": 80,
 	"qty": 1,
 	"bottom": 20

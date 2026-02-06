@@ -130,6 +130,19 @@ header::after {
 
 .lightbox.show {
   display: flex;
+  flex-direction: column;
+}
+
+.lightbox-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  margin-bottom: 12px;
+  padding: 0 16px;
+  pointer-events: none;
 }
 
 .lightbox img {
@@ -234,7 +247,7 @@ h3 {
   font-size: 20px;
   font-weight: 700;
   text-align: center;
-  line-height: 2;
+  line-height: 1.5;
   letter-spacing: 3px;
   text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
@@ -268,7 +281,7 @@ h3 {
 <!-- 全畫面廣告蓋版 -->
 <div class="overlay-ad" id="overlayAd">
   <img src="./image/紅包.png" alt="紅包">
-  <div class="ad-title">消費就送紅包袋<br>有錢有福款式任選<br>送完為止<br>滿500再送馬年春聯方斗</div>
+  <div class="ad-title">消費就送紅包袋<br>有錢 有福 款式任選<br>滿500再送馬年春聯方斗<br>送完為止</div>
   <button class="ad-close" id="adCloseBtn">開始逛逛</button>
 </div>
 
@@ -278,6 +291,7 @@ h3 {
 <div class="menu" id="menu"></div>
 
 <div class="lightbox" id="lightbox">
+  <div class="lightbox-title" id="lightboxTitle"></div>
   <img id="lightboxImg" src="" alt="">
 </div>
 
@@ -309,16 +323,17 @@ fetch('./products.json?t=' + Math.random())
     products.forEach(p => {
       const item = document.createElement("div");
       item.className = parseInt(p.qty) === 0 ? "item sold-out" : "item";
+      const displayName = p.display_name || p.name;
 
       const img = document.createElement("img");
       img.src = `./image/${p.name}.jpg`;
-      img.alt = p.name;
-      item.addEventListener("click", () => openLightbox(img.src));
+      img.alt = displayName;
+      item.addEventListener("click", () => openLightbox(img.src, displayName));
 
       const info = document.createElement("div");
       info.className = "info";
       info.innerHTML = `
-        <div class="name">${p.name}</div>
+        <div class="name">${displayName}</div>
         <div class="meta">
           <div class="price">NT$ ${p.price}</div>
           <div class="qty">剩餘 ${p.qty}</div>
@@ -352,8 +367,11 @@ function getDistance(t1, t2) {
   );
 }
 
-function openLightbox(src) {
+const lightboxTitle = document.getElementById("lightboxTitle");
+
+function openLightbox(src, title) {
   lightboxImg.src = src;
+  lightboxTitle.textContent = title || "";
   scale = 1;
   posX = 0;
   posY = 0;
