@@ -86,6 +86,16 @@ header::after {
   flex-shrink: 0;
 }
 
+.item .brandnew-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .info {
   flex: 1;
   display: flex;
@@ -436,6 +446,13 @@ function renderProducts(products) {
       </div>
       ${bottomHTML}
     `;
+
+    if (p.category && p.category.includes("全新")) {
+      const badge = document.createElement("img");
+      badge.src = "./image/brandnew.png";
+      badge.className = "brandnew-badge";
+      item.appendChild(badge);
+    }
 
     item.appendChild(img);
     item.appendChild(info);
