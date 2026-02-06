@@ -316,6 +316,7 @@ document.getElementById("adCloseBtn").addEventListener("click", () => {
 
 /* ========= 產生商品 ========= */
 const menu = document.getElementById("menu");
+const isAdmin = new URLSearchParams(window.location.search).get('admin') === '1';
 
 fetch('./products.json?t=' + Math.random())
   .then(res => res.json())
@@ -330,6 +331,10 @@ fetch('./products.json?t=' + Math.random())
       img.alt = displayName;
       item.addEventListener("click", () => openLightbox(img.src, displayName));
 
+      const bottomHTML = isAdmin && p.bottom != null
+        ? `<div class="price" style="color:#c0392b;">底價 NT$ ${p.bottom}</div>`
+        : '';
+
       const info = document.createElement("div");
       info.className = "info";
       info.innerHTML = `
@@ -338,6 +343,7 @@ fetch('./products.json?t=' + Math.random())
           <div class="price">NT$ ${p.price}</div>
           <div class="qty">剩餘 ${p.qty}</div>
         </div>
+        ${bottomHTML}
       `;
 
       item.appendChild(img);
