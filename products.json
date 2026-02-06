@@ -666,6 +666,7 @@
 	"category": ["生活", "文具", "全新"]
 }, {
 	"name": "檸檬背心",
+	"display_name": "American Retro 檸檬背心(S)",
 	"price": 150,
 	"qty": 1,
 	"bottom": 100,
