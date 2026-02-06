@@ -155,6 +155,7 @@
 	"category": ["文具", "生活", "全新"]
 }, {
 	"name": "鮮乳坊提袋",
+	"display_name": "鮮乳坊可收納提袋",
 	"price": 50,
 	"qty": 1,
 	"bottom": 30,
@@ -616,16 +617,21 @@
 	"name": "襪子50",
 	"display_name": "襪子",
 	"price": 50,
-	"qty": 1,
-	"bottom": 50,
-	"category": ["穿搭", "運動", "全新"]
-}, {
-	"name": "襪子30",
-	"display_name": "襪子",
-	"price": 30,
-	"qty": 1,
+	"qty": 4,
 	"bottom": 30,
 	"category": ["穿搭", "運動", "全新"]
+}, {
+	"name": "透明玻璃碗",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30,
+	"category": ["器皿"]
+}, {
+	"name": "墨綠淺碗",
+	"price": 50,
+	"qty": 1,
+	"bottom": 30,
+	"category": ["器皿"]
 }, {
 	"name": "iPhone 13 Pro手機殼",
 	"price": 100,
@@ -634,18 +640,20 @@
 	"category": ["生活"]
 }, {
 	"name": "水瓶",
+	"display_name": "樂扣樂扣PET水壺",
 	"price": 50,
 	"qty": 1,
 	"bottom": 30,
-	"category": ["器皿"]
+	"category": ["器皿", "全新"]
 }, {
 	"name": "相框",
 	"price": 20,
 	"qty": 1,
 	"bottom": 10,
-	"category": ["生活"]
+	"category": ["生活", "全新"]
 }, {
 	"name": "矽膠保鮮袋",
+	"display_name": "矽膠保鮮密封袋",
 	"price": 50,
 	"qty": 1,
 	"bottom": 30,
@@ -670,6 +678,7 @@
 	"category": ["穿搭", "全新"]
 }, {
 	"name": "TNF短T",
+	"display_name": "The North Face 短T",
 	"price": 150,
 	"qty": 1,
 	"bottom": 100,
