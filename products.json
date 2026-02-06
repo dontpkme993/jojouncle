@@ -556,13 +556,13 @@
 	"price": 100,
 	"qty": 1,
 	"bottom": 80,
-	"category": ["提袋"]
+	"category": ["提袋", "全新"]
 }, {
 	"name": "Taiwan Industrail Heritage 提袋",
 	"price": 120,
 	"qty": 1,
 	"bottom": 100,
-	"category": ["提袋"]
+	"category": ["提袋", "全新"]
 }, {
 	"name": "中研院 提袋",
 	"price": 100,
