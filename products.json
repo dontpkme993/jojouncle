@@ -81,6 +81,7 @@
 	"category": ["器皿"]
 }, {
 	"name": "sakura黃碗",
+	"display_name": "櫻花圖案黃碗",
 	"price": 30,
 	"qty": 1,
 	"bottom": 30,
@@ -93,6 +94,7 @@
 	"category": ["器皿", "擺設"]
 }, {
 	"name": "sakura碗盤組",
+	"display_name": "櫻花圖案碗盤組",
 	"price": 80,
 	"qty": "1組",
 	"bottom": 50,
@@ -130,6 +132,7 @@
 	"category": ["器皿"]
 }, {
 	"name": "金魚盤",
+	"display_name": "浮雕金魚玻璃盤",
 	"price": 100,
 	"qty": 1,
 	"bottom": 50,
@@ -145,7 +148,7 @@
 	"price": 50,
 	"qty": "1組",
 	"bottom": 50,
-	"category": ["文具"]
+	"category": ["文具", "生活"]
 }, {
 	"name": "鮮乳坊提袋",
 	"price": 50,
@@ -189,7 +192,7 @@
 	"price": 500,
 	"qty": 1,
 	"bottom": 450,
-	"category": ["穿搭"]
+	"category": ["穿搭", "生活"]
 }, {
 	"name": "super robot筆記本 魔神Z",
 	"price": 950,
