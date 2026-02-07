@@ -281,7 +281,7 @@
 	"name": "林青霞鏡子",
 	"display_name": "林青霞劇照桌面立鏡",
 	"price": 200,
-	"qty": 1,
+	"qty": 0,
 	"bottom": 150,
 	"category": ["生活", "擺設"]
 }, {
@@ -367,7 +367,7 @@
 }, {
 	"name": "波堤獅碗",
 	"price": 20,
-	"qty": 1,
+	"qty": 0,
 	"bottom": 20,
 	"category": ["器皿"]
 }, {
@@ -403,7 +403,7 @@
 }, {
 	"name": "小小兵玩具",
 	"price": 80,
-	"qty": 1,
+	"qty": 0,
 	"bottom": 10,
 	"category": ["生活", "擺設"]
 }, {
@@ -611,7 +611,7 @@
 	"name": "土耳其燈",
 	"display_name": "土耳其馬賽克玻璃夜燈",
 	"price": 300,
-	"qty": 1,
+	"qty": 0,
 	"bottom": 200,
 	"category": ["擺設", "生活"]
 }, {
