@@ -164,7 +164,7 @@
 	"name": "starbucks飲料袋",
 	"display_name": "星巴克飲料提袋",
 	"price": 50,
-	"qty": 1,
+	"qty": 0,
 	"bottom": 50,
 	"category": ["提袋"]
 }, {
@@ -618,7 +618,7 @@
 	"name": "襪子50",
 	"display_name": "襪子",
 	"price": 50,
-	"qty": 4,
+	"qty": 2,
 	"bottom": 30,
 	"category": ["穿搭", "運動", "全新"]
 }, {
