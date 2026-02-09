@@ -363,6 +363,14 @@ h3 {
 }
 
 </style>
+<script>
+  // 檢查當前網址是否包含你的 Vercel 網域
+  const targetDomain = "jojouncle.vercel.app";
+  if (window.location.hostname !== targetDomain && window.location.hostname !== "localhost") {
+    // 如果不是新網域，也不是你在本機測試 (localhost)，就進行跳轉
+    window.location.replace("https://" + targetDomain + window.location.pathname + window.location.search);
+  }
+</script>
 </head>
 
 <body>
