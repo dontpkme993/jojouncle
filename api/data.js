@@ -22,8 +22,8 @@ module.exports = async(req, res) => {
 		// 2. 在後端就把資料「洗乾淨」，只傳回前端需要的欄位
 		const cleanData = data.results.map(page => ({
 			// id: page.id,
-			display_name: page.properties.display_name.rich_text[0] ? page.properties.display_name.rich_text[0].text.content : "未命名",
-			name: page.properties.name.title[0] ? page.properties.name.title[0].plain_text : "未命名",
+			name: page.properties.name.title[0] ? page.properties.name.title[0].plain_text : null,
+			display_name: page.properties.display_name.rich_text[0] ? page.properties.display_name.rich_text[0].text.content : null,
 			price: page.properties.price.number || 0,
 			bottom: page.properties.bottom.number || 0,
 			qty: page.properties.qty.number || 0,
