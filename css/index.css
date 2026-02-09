@@ -280,7 +280,7 @@ h3 {
 }
 
 /* ===== 全畫面廣告蓋版 ===== */
-.overlay-ad {
+.overlay-promote {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -312,7 +312,7 @@ h3 {
   margin-bottom: 28px;
 }
 
-.overlay-ad .promote-img {
+.overlay-promote .promote-img {
   width: 100%;
   border-radius: 18px;
   filter: drop-shadow(0 10px 28px rgba(139, 94, 60, 0.5)) brightness(1);
@@ -324,7 +324,7 @@ h3 {
   transition: opacity 0.8s ease;
 }
 
-.overlay-ad .promote-img.active {
+.overlay-promote .promote-img.active {
   opacity: 1;
   position: relative;
 }
@@ -340,7 +340,7 @@ h3 {
 
 }
 
-.overlay-ad .promote-title {
+.overlay-promote .promote-title {
   color: #f4f2ee;
   font-size: 20px;
   font-weight: 700;
@@ -350,7 +350,7 @@ h3 {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
-.overlay-ad .promote-close {
+.overlay-promote .promote-close {
   margin-top: 36px;
   padding: 14px 32px;
   font-size: 16px;
@@ -365,7 +365,7 @@ h3 {
   transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
-.overlay-ad .promote-close:active {
+.overlay-promote .promote-close:active {
   background: #6e4a2e;
   box-shadow: 0 2px 8px rgba(139, 94, 60, 0.25);
   transform: scale(0.96);
