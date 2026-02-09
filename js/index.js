@@ -1,372 +1,204 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-  background: #f4f2ee;
-  color: #2b2b2b;
+/* ========= 關閉廣告蓋版 ========= */
+document.getElementById("adCloseBtn").addEventListener("click", () => {
+	document.getElementById("overlayAd").style.display = "none";
+	clearInterval(adRotateTimer);
+});
+
+/* ========= 廣告圖片輪播 ========= */
+const adImages = document.querySelectorAll(".overlay-ad .ad-img");
+let adIndex = 0;
+const adRotateTimer = setInterval(() => {
+	adImages[adIndex].classList.remove("active");
+	adIndex = (adIndex + 1) % adImages.length;
+	adImages[adIndex].classList.add("active");
+}, 2000);
+
+/* ========= 自動加上 openExternalBrowser 參數 ========= */
+(function() {
+	const url = new URL(window.location.href);
+	if (!url.searchParams.has('openExternalBrowser')) {
+		url.searchParams.set('openExternalBrowser', '1');
+		window.location.replace(url.toString());
+	}
+})();
+
+/* ========= 產生商品 ========= */
+const menu = document.getElementById("menu");
+const isAdmin = new URLSearchParams(window.location.search).get('admin') === '1';
+let allProducts = [];
+
+function renderProducts(products) {
+	menu.innerHTML = '';
+	products.forEach(p => {
+		const item = document.createElement("div");
+		item.className = parseInt(p.qty) === 0 ? "item sold-out" : "item";
+		const displayName = p.display_name || p.name;
+
+		const img = document.createElement("img");
+		img.src = `./image/${p.name}.jpg`;
+		img.alt = displayName;
+		item.addEventListener("click", () => openLightbox(img.src, displayName, p.price));
+
+		const bottomHTML = isAdmin && p.bottom != null ?
+			`<div class="price" style="color:#c0392b;">底價 NT$ ${p.bottom}</div>` :
+			'';
+
+		const info = document.createElement("div");
+		info.className = "info";
+		info.innerHTML = `
+      <div class="name">${displayName}</div>
+      <div class="meta">
+        <div class="price">NT$ ${p.price}</div>
+        <div class="qty">剩餘 ${p.qty}</div>
+      </div>
+      ${bottomHTML}
+    `;
+
+		if (p.category && p.category.includes("全新")) {
+			const badge = document.createElement("img");
+			badge.src = "./image/brandnew.png";
+			badge.className = "brandnew-badge";
+			item.appendChild(badge);
+		}
+
+		item.appendChild(img);
+		item.appendChild(info);
+		menu.appendChild(item);
+	});
 }
 
-header {
-  padding: 36px 16px 20px;
-  text-align: center;
-  font-size: 38px;
-  font-weight: 800;
-  letter-spacing: 6px;
-  background: linear-gradient(135deg, #8b5e3c 0%, #c49a6c 50%, #8b5e3c 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3s ease-in-out infinite;
-  position: relative;
+// fetch('./products.json?t=' + Math.random())
+fetch('./api/data?t=' + Math.random())
+	.then(res => res.json())
+	.then(products => {
+		for (var i = 0; i < products.length; i++) {
+			if (products[i].price <= 50)
+				products[i].category.push("銅板價");
+		}
+		allProducts = products;
+		renderProducts(allProducts);
+	});
+
+/* ========= 標籤篩選 ========= */
+const activeTags = new Set();
+document.getElementById("tagFilter").addEventListener("click", e => {
+	const tag = e.target.closest('.tag');
+	if (!tag) return;
+	const value = tag.dataset.tag;
+	if (activeTags.has(value)) {
+		activeTags.delete(value);
+		tag.classList.remove("active");
+	} else {
+		activeTags.add(value);
+		tag.classList.add("active");
+	}
+	if (activeTags.size === 0) {
+		renderProducts(allProducts);
+	} else {
+		renderProducts(allProducts.filter(p =>
+			p.category && p.category.some(c => activeTags.has(c))
+		));
+	}
+});
+
+/* ========= Lightbox + 手勢 ========= */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+let scale = 1,
+	startScale = 1;
+let posX = 0,
+	posY = 0;
+let startX = 0,
+	startY = 0;
+let lastTouchDistance = 0;
+
+function updateTransform() {
+	lightboxImg.style.transform =
+		`translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
-header::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #c49a6c, transparent);
-  margin: 12px auto 0;
-  border-radius: 2px;
+function getDistance(t1, t2) {
+	return Math.hypot(
+		t2.clientX - t1.clientX,
+		t2.clientY - t1.clientY
+	);
 }
 
-@keyframes shimmer {
-  0%, 100% {
-    background-position: 0% center;
-  }
+const lightboxTitle = document.getElementById("lightboxTitle");
+const lightboxPrice = document.getElementById("lightboxPrice");
 
-  50% {
-    background-position: 200% center;
-  }
-
+function openLightbox(src, title, price) {
+	lightboxImg.src = src;
+	lightboxTitle.textContent = title || "";
+	lightboxPrice.textContent = price != null ? `NT$ ${price}` : "";
+	scale = 1;
+	posX = 0;
+	posY = 0;
+	updateTransform();
+	lightbox.classList.add("show");
 }
 
-.menu {
-  max-width: 520px;
-  margin: auto;
-  padding: 20px 16px 40px;
-}
+lightboxImg.addEventListener("touchstart", e => {
+	if (e.touches.length === 1) {
+		startX = e.touches[0].clientX - posX;
+		startY = e.touches[0].clientY - posY;
+	}
+	if (e.touches.length === 2) {
+		lastTouchDistance = getDistance(e.touches[0], e.touches[1]);
+		startScale = scale;
+	}
+});
 
-.item.sold-out::before {
-  content: "售完";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  z-index: 1;
-}
+lightboxImg.addEventListener("touchmove", e => {
+	e.preventDefault();
 
-.item {
-  display: flex;
-  gap: 14px;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 14px;
-  margin-bottom: 16px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  position: relative;
-  cursor: pointer;
-  border-radius: 0px;
-}
+	if (e.touches.length === 1) {
+		posX = e.touches[0].clientX - startX;
+		posY = e.touches[0].clientY - startY;
+		updateTransform();
+	}
 
-.item img {
-  width: 96px;
-  height: 96px;
-  border-radius: 14px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
+	if (e.touches.length === 2) {
+		const newDistance = getDistance(e.touches[0], e.touches[1]);
+		scale = Math.min(Math.max(startScale * (newDistance / lastTouchDistance), 1), 4);
+		updateTransform();
+	}
+}, {
+	passive: false
+});
 
-.item .brandnew-badge {
-  position: absolute;
-  top: 0px;
-  left: -3px;
-  width: 35px;
-  height: 35px;
-  z-index: 2;
-  pointer-events: none;
-  border-radius: 0px;
-}
+lightboxImg.addEventListener("touchend", e => {
+	if (e.touches.length === 1) {
+		// 從雙指變單指時，重新計算起始位置以避免圖片跳動
+		startX = e.touches[0].clientX - posX;
+		startY = e.touches[0].clientY - posY;
+	}
+});
 
-.info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+lightbox.addEventListener("click", () => {
+	lightbox.classList.remove("show");
+	lightboxImg.src = "";
+	scale = 1;
+	posX = 0;
+	posY = 0;
+});
 
-.name {
-  font-size: 18px;
-  font-weight: 500;
-}
+/* ========= 複製帳號功能 ========= */
+document.getElementById("copy-btn").addEventListener("click", () => {
+	const accountText = document.getElementById("account").textContent;
+	navigator.clipboard.writeText(accountText).then(() => {
+		const btn = document.getElementById("copy-btn");
+		const originalText = btn.textContent;
+		btn.textContent = "複製成功！";
+		setTimeout(() => {
+			btn.textContent = originalText;
+		}, 2000);
+	});
+});
 
-.meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.price {
-  font-size: 18px;
-  font-weight: 600;
-  color: #8b5e3c;
-}
-
-.qty {
-  font-size: 14px;
-  color: #666;
-}
-
-/* ===== Tag Filter ===== */
-.tag-filter {
-  margin: 0 auto;
-  padding: 15px 10px 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  position: sticky;
-  top: 0;
-  z-index: 90;
-  background: #f4f2ee;
-  transition: filter 0.3s;
-}
-
-.tag-filter.stuck {
-  filter: drop-shadow(0px 0px 6px #666666);
-}
-
-.tag-filter .tag {
-  padding: 6px 13px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: #8b5e3c;
-  background: #fff;
-  border: 1.5px solid #c49a6c;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.2s;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.tag-filter .tag.active {
-  color: #fff;
-  background: #8b5e3c;
-  border-color: #8b5e3c;
-  box-shadow: 0 2px 8px rgba(139, 94, 60, 0.3);
-}
-
-.tag-filter .tag:active {
-  transform: scale(0.95);
-}
-
-/* ===== Lightbox ===== */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-.lightbox.show {
-  display: flex;
-  flex-direction: column;
-}
-
-.lightbox-title {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-align: center;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  margin-bottom: 18px;
-  padding: 0 16px;
-  pointer-events: none;
-}
-
-.lightbox img {
-  max-width: none;
-  max-height: none;
-  width: 90%;
-  touch-action: none;
-  transform-origin: center center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.lightbox-price {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-align: center;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  margin-top: 12px;
-  padding: 6px 20px;
-  border-radius: 20px;
-  pointer-events: none;
-}
-
-h2 {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #5a3d28;
-  margin: 8px 16px 8px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-
-h2::before, h2::after {
-  content: "";
-  flex: 1;
-  max-width: 80px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c49a6c);
-}
-
-h2::after {
-  background: linear-gradient(90deg, #c49a6c, transparent);
-}
-
-h3 {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: #9a8777;
-  margin: 4px 16px 12px;
-  position: relative;
-}
-
-#copy-btn {
-  display: block;
-  margin: 8px auto 40px;
-  padding: 14px 32px;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #fff;
-  background: #8b5e3c;
-  border: none;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(139, 94, 60, 0.3);
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-}
-
-#copy-btn:active {
-  background: #6e4a2e;
-  box-shadow: 0 2px 8px rgba(139, 94, 60, 0.25);
-  transform: scale(0.96);
-}
-
-/* ===== 全畫面廣告蓋版 ===== */
-.overlay-ad {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeInAd 0.4s ease;
-}
-
-@keyframes fadeInAd {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-
-}
-
-.ad-img-wrapper {
-  position: relative;
-  width: 260px;
-  max-width: 65vw;
-  margin-bottom: 28px;
-}
-
-.overlay-ad .ad-img {
-  width: 100%;
-  border-radius: 18px;
-  filter: drop-shadow(0 10px 28px rgba(139, 94, 60, 0.5)) brightness(1);
-  animation: glow 1s ease-in-out infinite;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.overlay-ad .ad-img.active {
-  opacity: 1;
-  position: relative;
-}
-
-@keyframes glow {
-  0%, 100% {
-    filter: drop-shadow(0 10px 28px rgba(139, 94, 60, 0.5)) brightness(1);
-  }
-
-  50% {
-    filter: drop-shadow(0 10px 28px rgba(139, 94, 60, 0.5)) brightness(1.2);
-  }
-
-}
-
-.overlay-ad .ad-title {
-  color: #f4f2ee;
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.5;
-  letter-spacing: 3px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-}
-
-.overlay-ad .ad-close {
-  margin-top: 36px;
-  padding: 14px 32px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  background: #8b5e3c;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  letter-spacing: 2px;
-  box-shadow: 0 6px 18px rgba(139, 94, 60, 0.4);
-  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-}
-
-.overlay-ad .ad-close:active {
-  background: #6e4a2e;
-  box-shadow: 0 2px 8px rgba(139, 94, 60, 0.25);
-  transform: scale(0.96);
-}
+const sentinel = document.getElementById("tagFilterSentinel");
+const tagFilter = document.getElementById("tagFilter");
+new IntersectionObserver(([e]) => {
+	tagFilter.classList.toggle("stuck", !e.isIntersecting);
+}).observe(sentinel);
