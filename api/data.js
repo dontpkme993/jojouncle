@@ -1,6 +1,6 @@
 module.exports = async(req, res) => {
 	// 1. 設定快取 Header
-	res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate=10');
+	res.setHeader('Cache-Control', 's-maxage=5, stale-while-revalidate=60');
 
 	const token = process.env.NOTION_TOKEN;
 	const databaseId = process.env.NOTION_DATABASE_ID;
