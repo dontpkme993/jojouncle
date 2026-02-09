@@ -5,7 +5,7 @@ document.getElementById("adCloseBtn").addEventListener("click", () => {
 });
 
 /* ========= 廣告圖片輪播 ========= */
-const adImages = document.querySelectorAll(".overlay-ad .ad-img");
+const adImages = document.querySelectorAll(".overlay-ad .promote-img");
 let adIndex = 0;
 const adRotateTimer = setInterval(() => {
 	adImages[adIndex].classList.remove("active");

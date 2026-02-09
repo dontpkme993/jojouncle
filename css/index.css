@@ -305,14 +305,14 @@ h3 {
 
 }
 
-.ad-img-wrapper {
+.promote-img-wrapper {
   position: relative;
   width: 260px;
   max-width: 65vw;
   margin-bottom: 28px;
 }
 
-.overlay-ad .ad-img {
+.overlay-ad .promote-img {
   width: 100%;
   border-radius: 18px;
   filter: drop-shadow(0 10px 28px rgba(139, 94, 60, 0.5)) brightness(1);
@@ -324,7 +324,7 @@ h3 {
   transition: opacity 0.8s ease;
 }
 
-.overlay-ad .ad-img.active {
+.overlay-ad .promote-img.active {
   opacity: 1;
   position: relative;
 }
@@ -340,7 +340,7 @@ h3 {
 
 }
 
-.overlay-ad .ad-title {
+.overlay-ad .promote-title {
   color: #f4f2ee;
   font-size: 20px;
   font-weight: 700;
@@ -350,7 +350,7 @@ h3 {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
-.overlay-ad .ad-close {
+.overlay-ad .promote-close {
   margin-top: 36px;
   padding: 14px 32px;
   font-size: 16px;
@@ -365,7 +365,7 @@ h3 {
   transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
-.overlay-ad .ad-close:active {
+.overlay-ad .promote-close:active {
   background: #6e4a2e;
   box-shadow: 0 2px 8px rgba(139, 94, 60, 0.25);
   transform: scale(0.96);
