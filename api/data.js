@@ -14,7 +14,12 @@ module.exports = async(req, res) => {
 				'Notion-Version': '2022-06-28',
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({}), // 你可以在這裡加入 filter 或 sorts
+			body: JSON.stringify({
+				sorts: [{
+					property: 'idx', // 這裡填你剛剛建的欄位名
+					direction: 'ascending'
+				}]
+			}), // 你可以在這裡加入 filter 或 sorts
 		});
 
 		const data = await response.json();
