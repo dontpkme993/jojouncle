@@ -21,9 +21,11 @@ module.exports = async(req, res) => {
 
 		// 2. 在後端就把資料「洗乾淨」，只傳回前端需要的欄位
 		const cleanData = data.results.map(page => ({
-			id: page.id,
+			// id: page.id,
+			display_name: page.properties.display_name.title[0] ? page.properties.display_name.title[0].plain_text : "未命名",
 			name: page.properties.name.title[0] ? page.properties.name.title[0].plain_text : "未命名",
 			price: page.properties.price.number || 0,
+			bottom: page.properties.bottom.number || 0,
 			category: page.properties.category.multi_select.map(t => t.name)
 		}));
 
