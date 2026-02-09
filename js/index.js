@@ -27,6 +27,9 @@ const menu = document.getElementById("menu");
 const isAdmin = new URLSearchParams(window.location.search).get('admin') === '1';
 let allProducts = [];
 
+/* 顯示載入中動畫 */
+menu.innerHTML = '<div class="menu-loading"><div class="spinner"></div><div class="loading-text">載入中</div></div>';
+
 function renderProducts(products) {
 	menu.innerHTML = '';
 	products.forEach(p => {
