@@ -26,6 +26,7 @@ module.exports = async(req, res) => {
 			name: page.properties.name.title[0] ? page.properties.name.title[0].plain_text : "未命名",
 			price: page.properties.price.number || 0,
 			bottom: page.properties.bottom.number || 0,
+			qty: page.properties.qty.number || 0,
 			category: page.properties.category.multi_select.map(t => t.name)
 		}));
 
