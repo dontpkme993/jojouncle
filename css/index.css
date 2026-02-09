@@ -136,7 +136,6 @@ header::after {
   top: 0;
   z-index: 90;
   background: #f4f2ee;
-  transition: filter 0.3s;
 }
 
 .tag-filter.stuck {
