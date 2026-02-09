@@ -475,7 +475,8 @@ function renderProducts(products) {
   });
 }
 
-fetch('./products.json?t=' + Math.random())
+// fetch('./products.json?t=' + Math.random())
+fetch('./api/data')
   .then(res => res.json())
   .then(products => {
     for(var i = 0;i< products.length;i++){
