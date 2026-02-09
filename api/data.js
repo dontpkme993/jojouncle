@@ -26,7 +26,7 @@ module.exports = async(req, res) => {
 			display_name: page.properties.display_name.rich_text[0] ? page.properties.display_name.rich_text[0].text.content : null,
 			price: page.properties.price.number || 0,
 			bottom: page.properties.bottom.number || 0,
-			qty: page.properties.qty.number || 0,
+			qty: page.properties.qty.rich_text[0] ? page.properties.qty.rich_text[0].text.content : null,
 			category: page.properties.category.multi_select.map(t => t.name)
 		}));
 
