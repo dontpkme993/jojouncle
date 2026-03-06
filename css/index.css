@@ -421,12 +421,12 @@ h3 {
   transform: scale(0.96);
 }
 
-a {
+.shopee {
   color: #9a8777;
   margin: 8px auto 40px;
 }
 
-a img {
+.shopee img {
   position: relative;
   width: 18px;
   top: 4px;
