@@ -422,8 +422,11 @@ h3 {
 }
 
 .shopee {
-  color: #9a8777;
   margin: 8px auto 40px;
+}
+
+.shopee {
+  color: #9a8777;
 }
 
 .shopee img {
