@@ -84,9 +84,31 @@ fetch('./api/data?t=' + Math.random())
 
 /* ========= 標籤篩選 ========= */
 const activeTags = new Set();
+let sortByPriceAsc = false;
+
+function getFilteredProducts() {
+	let result = activeTags.size === 0
+		? allProducts
+		: allProducts.filter(p => p.category && p.category.some(c => activeTags.has(c)));
+	if (sortByPriceAsc) {
+		result = result.slice().sort((a, b) => a.price - b.price);
+	}
+	return result;
+}
+
 document.getElementById("tagFilter").addEventListener("click", e => {
 	const tag = e.target.closest('.tag');
 	if (!tag) return;
+
+	// 低價優先排序按鈕
+	if (tag.dataset.sort === 'price-asc') {
+		sortByPriceAsc = !sortByPriceAsc;
+		tag.classList.toggle("active", sortByPriceAsc);
+		renderProducts(getFilteredProducts());
+		return;
+	}
+
+	// 一般標籤篩選
 	const value = tag.dataset.tag;
 	if (activeTags.has(value)) {
 		activeTags.delete(value);
@@ -95,13 +117,7 @@ document.getElementById("tagFilter").addEventListener("click", e => {
 		activeTags.add(value);
 		tag.classList.add("active");
 	}
-	if (activeTags.size === 0) {
-		renderProducts(allProducts);
-	} else {
-		renderProducts(allProducts.filter(p =>
-			p.category && p.category.some(c => activeTags.has(c))
-		));
-	}
+	renderProducts(getFilteredProducts());
 });
 
 /* ========= Lightbox + 手勢 ========= */
